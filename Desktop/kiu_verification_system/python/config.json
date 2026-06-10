@@ -1,0 +1,72 @@
+{
+  "thresholds": {
+    "approved": 75,
+    "review": 50
+  },
+  "max_file_size_mb": 10,
+  "document_rules": {
+    "admission_letter": {
+      "required_fields": ["institution", "admission_evidence"],
+      "keywords": ["admission", "admitted", "offer", "program", "stamp", "signature", "kampala international university", "kiu"],
+      "field_points": {
+        "admission_number": 15,
+        "institution": 30,
+        "admission_evidence": 25,
+        "program": 15,
+        "date": 10,
+        "official_marker": 10
+      }
+    },
+    "certificate": {
+      "required_fields": ["name", "institution", "certificate_keyword", "date"],
+      "keywords": ["certificate", "uganda", "examination", "school", "result"],
+      "field_points": {
+        "name": 25,
+        "institution": 25,
+        "certificate_keyword": 25,
+        "date": 15
+      }
+    },
+    "national_id_passport": {
+      "required_fields": ["identity_keyword"],
+      "keywords": ["national id", "national identification", "passport", "identity", "citizenship", "date of birth", "nin"],
+      "field_points": {
+        "name": 20,
+        "identity_keyword": 30,
+        "date_of_birth": 20,
+        "id_number": 20
+      }
+    },
+    "former_school_id": {
+      "required_fields": ["school_keyword"],
+      "keywords": ["school", "student id", "student number", "registration", "institution", "valid", "card"],
+      "field_points": {
+        "name": 20,
+        "institution": 20,
+        "school_keyword": 30,
+        "student_number": 20
+      }
+    },
+    "award_letter": {
+      "required_fields": ["award_evidence", "institution"],
+      "keywords": ["bursary", "scholarship", "award", "sponsorship", "financial aid", "kampala international university", "kiu"],
+      "field_points": {
+        "name": 20,
+        "institution": 25,
+        "award_evidence": 30,
+        "date": 10,
+        "official_marker": 10
+      }
+    },
+    "bank_slip": {
+      "required_fields": ["bank_name", "reference", "amount", "date"],
+      "keywords": ["bank", "receipt", "deposit", "payment", "amount", "reference"],
+      "field_points": {
+        "bank_name": 20,
+        "reference": 25,
+        "amount": 30,
+        "date": 15
+      }
+    }
+  }
+}
