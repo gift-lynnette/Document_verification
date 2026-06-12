@@ -1,743 +1,0 @@
-DESIGN AND DEVELOPMENT OF AN AUTOMATED 
-TUITION VERIFICATION AND DIGITAL GREEN CARD ISSUANCE SYSTEM FOR NEW STUDENTS. 
-A CASE STUDY OF KAMPALA INTERNATIONAL UNIVERSITY 
-(KIU). 
-BY: 
-GIFT LYNNETTE  
- 2023-08-18430 
-& 
-OUMO EMMANUEL  
-2023-08-20134 
-DEPARTMENT OF COMPUTER SCIENCE 
-SCHOOL OF MATHEMATICS AND COMPUTING 
-SUPERVISED 
-BY 
-MS. CHEBET SHILLA 
-A PROJECT PROPOSAL SUBMITTED TO THE SCHOOL OF MATHEMATICS AND 
-COMPUTING IN PARTIAL FULFILLMENT OF THE REQUIREMENT FOR THE AWARD OF BACHELOR'S DEGREE IN COMPUTER SCIENCE AT KAMPALA INTERNATIONAL UNIVERSITY UGANDA. 
-APRIL 2026
-
- 
-DECLARATION 
-We, OUMO EMMANUEL and GIFT LYNNETTE, hereby declare that the material submitted in this report has been written and compiled by us to the best of our abilities and has not been submitted for any academic award to any other institution. All sources used in this proposal have been duly acknowledged. 
-Student Name: GIFT LYNNETTE 
-Signature: .............................. Date: .............................. 
-Student Name: OUMO EMMANUEL 
-Signature: ..............................  Date: .............................. 
- 
- 
- 	 
-
-APPROVAL 
-This is to certify that this project proposal titled, Design and Development of an Automated 
-Tuition Verification and Digital Green Card Issuance System for New Students: A Case Study of Kampala International University (KIU), has been conducted under my supervision and guidance. I am honoured to approve this proposal for submission to the School of Mathematics and Computing. Supervisor Name: MS. CHEBET SHILLA 
-Signature: .................................. 
-Date: ........................................ 
- 
- 
- 	 
-DEDICATION 
-We dedicate this project to the Almighty God, the source of all wisdom and knowledge, for His grace and guidance throughout this academic journey. 
-To our beloved parents and families, whose unconditional love, endless sacrifices, and unwavering support have been the foundation of our success. Your constant prayers, encouragement, and belief in our potential have carried us through every challenge. 
- 
- 	 
-
-ACKNOWLEDGEMENT 
-We extend our profound gratitude to the Almighty God for His abundant grace, wisdom, and strength that enabled us to complete this project at Kampala International University. 
-We also extend our appreciation to the Department of Computer Science, the School of Mathematics and Computing, and Kampala International University for the precious guidance, training, and a supportive academic environment which were of value throughout our study period. 
-We are especially grateful to our supervisor, Ms. Chebet Shilla, for her invaluable guidance, constructive feedback, and continuous support during this project. 
- 
- 	 
-
-ABSTRACT 
-The manual process of verifying tuition payments and issuing Green Cards for newly admitted students at Kampala International University (KIU) creates significant administrative bottlenecks, resulting in long queues, excessive delays and poor onboarding experiences. This research aims to develop an automated tuition verification and digital green card issuance system to address these challenges. The study objectives are: to investigate the current manual process; to design and develop an automated system; to implement the system. 
-The research employs a descriptive research design with a sample size of 100 respondents comprising students, finance office staff, and admissions office personnel. Data will be collected through questionnaires, interviews, direct observation, and document analysis. The system will be developed using the Agile Software Development Life Cycle (SDLC) methodology with iterative development, continuous stakeholder feedback, and incremental feature delivery. 
-The proposed system will feature student self-service portals, finance office dashboards, admissions office interfaces, automated notifications, and secure document storage. The system is expected to reduce verification time from 5-7 days to less than 24 hours, eliminate physical queues, provide real-time status tracking, and automate green card generation with QR codes. This automated system will significantly improve operational efficiency, enhance student satisfaction, reduce administrative costs, and provide scalable solutions for managing growing student populations. 
- 
- 
- 
- 
- 	 
-Table of Content 
-DECLARATION	i 
-APPROVAL	ii 
-DEDICATION	iii 
-ACKNOWLEDGEMENT	iv 
-ABSTRACT	v 
-LIST OF FIGURES	ix 
-LIST OF ABBREVIATIONS	x 
-CHAPTER ONE	1 
-INTRODUCTION	1 
-1.0 Introduction	1 
-1.1 Background of the Study	1 
-1.1.1 Historical Perspective	1 
-1.1.2 Theoretical Perspective	2 
-1.1.3 Conceptual Perspective	3 
-1.1.4 Contextual Perspective	4 
-1.2 Problem Statement	5 
-1.3 Objectives of the Study	6 
-1.3.1 General Objective	6 
-1.3.2 Specific Objectives	6 
-1.4 Research questions	6 
-1.5 Significance of the study	7 
-1.8 Scope of the study	9 
-1.8.1 Content Scope	9 
-1.8.2 Geographical Scope	9 
-1.8.3 Time Scope	10 
-CHAPTER TWO	11 
-LITERATURE REVIEW	11 
-2.0 Introduction	11 
-2.1 Theoretical Review	11 
-2.2 Conceptual Review	13 
-2.3 Review of Related Literature	16 
-2.3.1 Automated Tuition Verification Systems and Administrative Efficiency	16 
-2.3.2 Digital Student Credential Systems and Security Enhancement	18 
-2.3.3 Implementation Challenges and Success Factors	19 
-2.4 Empirical Review	22 
-2.5 Gaps Identified	24 
-CHAPTER THREE	27 
-METHODOLOGY	27 
-3.1 Introduction	27 
-3.1 Research Design	27 
-3.1.1 Qualitative Research Approach	27 
-3.1.2 Quantitative Research Approach	29 
-3.1.3 Integration of Qualitative and Quantitative Approaches	30 
-3.1.4 Agile Software Development Methodology	31 
-3.2 Target Population	32 
-3.2.1 Sampling Technique	32 
-3.2.2 Sample Size	33 
-3.2.3 Sampling Strategy	35 
-3.3 System Requirements	36 
-3.3.1 Functional Requirements	36 
-3.3.2 Non-Functional Requirements	38 
-3.4 Data Collection	39 
-3.4.1 Data Collection Methods	39 
-3.5 Data Analysis	40 
-3.6 System Design	41 
-3.6.1 Architectural Design	41 
-3.7 System Development (Agile Methodology)	41 
-3.8 System Testing	42 
-3.9 Ethical Considerations	42 
-3.10 Limitations of the Study	42 
-References	44 
-APPENDIX I: QUESTIONNAIRE	45 
-APPENDIX II: INTERVIEW GUIDE	51 
-
- 
- 
- 	 
-LIST OF FIGURES 
-Figure 1 Conceptual Framework for Automated Tuition Verification System ........................ 15 
- 
- 
- 
- 
- 
- 	 
-
-LIST OF ABBREVIATIONS 
-KIU 	............................................................. Kampala International University 
-SDLC ............................................................. Software Development Life Cycle 
-TAM   ............................................................. Technology Acceptance Model 
-SIS      ............................................................ Student Information Systems 
-SIMS ............................................................ Student Information Management 
-System 
-QR      ............................................................ Quick Response 
-IT       ............................................................ Information Technology 
-MB     ............................................................ Megabyte 
-PDF    ............................................................ Portable Document Format 
-PHP    ............................................................ Hypertext Preprocessor (Scripting 
-Language) 
-PNG     ............................................................ Portable Network Graphics
-
-CHAPTER ONE 
-INTRODUCTION 
-1.0 Introduction 
-This chapter provides a foundation for understanding the research project by presenting the background context, identifying the specific problem being addressed, and outlining the objectives that will guide the study. The chapter begins with an overview of student registration processes in higher education institutions, particularly focusing on the tuition verification and documentation procedures at Kampala International University. It then narrows down to explain the scope and significance of developing an automated solution.  
-1.1 Background of the Study 
-1.1.1 Historical Perspective 
-Globally, higher education institutions began transitioning from manual to automated student registration systems in the 1990s, with universities in North America and Europe leading the digital transformation (Watson & Prestridge, 2022). The introduction of Student Information Systems (SIS) revolutionized administrative processes, enabling online fee payment, digital document submission, and automated credential issuance. By the 2020s, over 85% of universities in developed countries had fully integrated digital registration platforms (Oliveira et al., 2023). 
- 
-At the continental level, African universities faced slower adoption due to infrastructure limitations and resource constraints. However, the COVID-19 pandemic accelerated digitalization across the continent, with institutions recognizing the critical need for automated systems (Mtebe & Raisamo, 2023). Countries like South Africa, Kenya, and Ghana pioneered digital student services, implementing online registration portals and electronic payment verification systems between 2015 and 2020 (Lwoga & Komba, 2023). 
- 
-Regionally, East African universities including the University of Nairobi, Makerere University, and Strathmore University developed automated student management systems between 2018 and 2022. These systems integrated tuition verification, student registration, and digital ID card generation, significantly reducing processing times and administrative bottlenecks (Asiimwe & Grönlund, 2023). The Inter-University Council for East Africa promoted knowledge sharing on digital transformation, encouraging regional standardization of student data systems. 
- 
-Nationally, Uganda's higher education sector has shown growing interest in automation. Makerere University launched its online student portal in 2019, enabling digital fee verification and course registration (Mugisha & Nakato, 2023). However, many private universities, including Kampala International University, continue to rely on manual tuition verification processes. At KIU, new students must physically present bank payment slips and admission letters for verification, then queue at separate offices to collect physical green cards. During peak registration periods, this process takes 3-5 days, causing students to miss lectures and creating significant administrative burden (KIU Student Affairs Report, 2023). 
-This gap between institutional needs and current capabilities motivates the present research. 
-1.1.2 Theoretical Perspective 
-This study is anchored on two complementary theories: the Technology Acceptance Model (TAM) and the Diffusion of Innovations Theory. 
- 
-The Technology Acceptance Model, refined by Venkatesh et al. (2022), explains that system adoption depends on perceived usefulness and perceived ease of use. For the automated tuition verification system, perceived usefulness relates to how students, finance staff, and admissions personnel believe the system will improve their tasks faster processing, reduced queues, and immediate green card access. Perceived ease of use concerns the system's intuitiveness and simplicity. Research shows that systems optimizing both factors achieve adoption rates exceeding 85% within six months (Alharbi & Drew, 2023). TAM guides the design of user interfaces and functionality to maximize acceptance across all stakeholder groups. 
- 
-The Diffusion of Innovations Theory by Rogers (2003), updated by Wang et al. (2023), describes how innovations spread through organizations via five stages: knowledge, persuasion, decision, implementation, and confirmation. The theory identifies five attributes influencing adoption: relative advantage, compatibility with existing practices, complexity, trialability, and observability of results. For KIU's system, demonstrating clear advantages over manual processes, ensuring compatibility with university workflows, minimizing complexity through intuitive design, enabling pilot testing, and showcasing measurable results will accelerate adoption. Studies in African universities confirm that addressing these attributes leads to successful implementation within 18-24 months (Okyere-Kwakye & Nor, 2022). 
- 
-These theories provide a framework for system design, implementation strategy, and evaluation, ensuring technical solutions align with user acceptance and organizational adoption requirements. 
-1.1.3 Conceptual Perspective 
-Key concepts and variables in this research are defined as follows: 
- 
-Automated Tuition Verification is the digital process of validating student fee payments through online submission, electronic cross-referencing against admission requirements, digital approval workflows, and automated receipt generation (Ameen et al., 2023). 
- 
-Digital Green Card refers to an electronically generated student credential with security features including QR codes, unique identification numbers, and digital signatures, providing proof of tuition verification and access rights to university facilities (Hashim & Ahmad, 2022). 
- 
-Independent Variables are the key system characteristics and implementation factors that are designed, developed, and controlled and they  include; System Functionality completeness of features such as document upload, verification workflows, and green card generation, User Interface Design intuitiveness and navigation efficiency, System Security data encryption and access controls, Staff Training effectiveness of training programs. 
-Dependent Variables are the measurable outcomes that are expected to improve as a result of implementing the new system. These include; Processing Time duration from submission to green card issuance, Student Satisfaction overall experience and perceived efficiency, Administrative Efficiency workload reduction and error rates, System Adoption Rate percentage of users actively utilizing the digital system. 
-Intervening Variables include internet connectivity, digital literacy levels, resistance to change, and technical support availability. 
- 
-Payment Verification Status has three states; Pending (submitted but not reviewed), Verified (payment confirmed and approved), and Rejected (insufficient payment or incomplete documentation requiring resubmission). This enables real-time tracking for all stakeholders (Kimaro & Nhampossa, 2023). 
-1.1.4 Contextual Perspective 
-Kampala International University processes over 8,000 new students annually, with peak admissions in January and August. The current manual tuition verification process requires students to physically present bank payment slips showing at least 50% tuition payment and admission letters at the Finance Office. After verification, students queue at the Admissions Office to collect physical green cards essential for accessing lectures, libraries, and examinations. 
- 
-During peak periods, the Finance Office handles 200-300 verifications daily, creating 3-4hour queues. Each manual verification takes 10-15 minutes, with error rates of approximately 8% due to manual data entry and illegible documentation (KIU Finance Office Report, 2023). Students wait 3-5 days to complete the entire process, missing initial lectures and experiencing frustration during their first weeks at university (Ssekandi, 2024). 
-Approximately 5-10% of submitted documents are temporarily misplaced, requiring students to obtain duplicate bank statements. 
- 
-The proposed solution is a web-based automated tuition verification and digital green card issuance system comprising three modules: (1) Student Portal for account creation, document upload, status tracking, and green card download; (2) Finance Office Module with verification dashboards, approval workflows, and automated data transfer; and (3) Admissions Office Module for automatic green card generation with QR codes and registration number assignment. 
- 
-The implementation follows agile methodology with development, testing, and deployment phases. Success metrics include reducing processing time from 3-5 days to under 24 hours, eliminating physical queues, achieving 80% student satisfaction, reducing errors to below 2%, and processing 90% of verifications digitally within the first year. This approach addresses root causes of inefficiency through targeted automation, transforming student onboarding while enhancing administrative capacity. 
-1.2 Problem Statement 
-In higher education, tuition fee payment verification is a mandatory requirement that initiates the onboarding process for every new student. Ideally, this process should be seamless, allowing students to submit payment documentation digitally and receive instant verification without disrupting their academic integration. However, the current process of verifying tuition payments and issuing Green Cards for new students at Kampala International University is heavily reliant on manual procedures. Newly admitted students must physically present bank payment slips for at least 50% of required fees along with admission letters at the Finance Office for verification, followed by another queue at the Admissions Office to collect a physical Green Card essential for accessing lectures, libraries, and examinations. 
- 
-The increasing number of students joining the university has led to overwhelming queues and delays at both offices. During peak admission periods, students wait 3-5 days to complete verification, with each manual verification taking 10-15 minutes per student, creating severe backlogs. Document misplacement occurs in 5-10% of cases, and studies from similar East African institutions report that up to 20% of new students miss their first week of classes due to registration delays. This outdated workflow creates administrative bottlenecks, and the manual verification process is prone to data entry errors and document misplacement. 
- 
-Consequently, students face significant registration setbacks and lose valuable study hours due to extended waiting periods, disrupting lecture attendance and initial academic integration. Administrative staff remain overburdened, leading to burnout and reduced service quality, while the university's reputation suffers as prospective students compare experiences with digitally advanced institutions. Furthermore, the manual system is not scalable, and as enrollment numbers increase, the problem intensifies. 
-Critical gaps exist preventing efficient operations: there is no digital platform for remote document submission, no automated verification system for real-time payment crossreferencing, no integrated communication between Finance and Admissions offices, no student tracking mechanism for verification status, no centralized database for reporting and analytics, and no automatic digital green card generation system. Therefore, there is a critical need to transition from this inefficient manual process to an integrated digital system. The development of an automated tuition verification and digital Green Card issuance system will address these challenges by enabling online submission of admission letters and bank slips, digital verification workflows, automatic green card generation, and comprehensive tracking and reporting capabilities. 
-1.3 Objectives of the Study 
-1.3.1 General Objective 
-To design and develop an automated tuition verification and digital green card issuance system that streamlines the onboarding process for newly admitted students at Kampala International University. 
-1.3.2 Specific Objectives 
-i. To investigate the current manual process of verifying tuition and issuing green cards for new students at Kampala International University. 
-ii. To design and develop an automated tuition verification and green card issuance system for KIU. iii. 	To implement the developed automated tuition verification and green card issuance system for KIU. 
-1.4 Research questions 
-To achieve the objectives outlined above, this study seeks to answer the following research questions: 
-i. What are the challenges and inefficiencies in the current manual process of verifying tuition and issuing green cards for new students at KSampala International University? 
-ii. What are the functional and non-functional requirements for designing an automated tuition verification and green card issuance system for KIU? 
-iii. How effective is the implemented automated tuition verification and green card issuance system in improving efficiency, accuracy, and user satisfaction compared to the manual process? 
-1.5 Significance of the study 
-This study will contribute significantly to improving student services and administrative operations at Kampala International University and potentially serve as a model for other educational institutions facing similar challenges. The anticipated benefits and significance of this research are multifaceted. 
-For students, the system will dramatically improve their onboarding experience by eliminating the need to spend hours or days waiting in queues at finance and admissions offices. New students will be able to submit their admission letters and bank slips digitally from anywhere, at any time, without having to physically travel to campus before verification is complete. They will receive real-time updates on their verification status and can download their digital green cards immediately upon approval. This convenience will reduce stress, save time and money on accommodation and transport, and allow students to focus on preparing for their studies rather than navigating bureaucratic processes. 
-The finance department will benefit from increased efficiency and reduced workload during peak registration periods. Instead of manually handling hundreds of physical documents, finance staff will be able to review submissions digitally, with all relevant information organized in a centralized database. The system will provide validation checks that flag potential issues with bank slips, reducing the risk of approving fraudulent or incorrect payments. Finance officers will have access to comprehensive reports and dashboards that provide visibility into how many verifications are pending, completed, or rejected, enabling better workload management and resource allocation. 
-For the admissions office, the system will eliminate the manual task of preparing and issuing physical green cards. The automated generation of digital green cards with QR codes will ensure consistency in format and reduce the possibility of forgery. Admissions staff will have immediate access to verified student records, enabling them to focus on other critical tasks such as orientation planning and student advising rather than document processing. The automatic assignment of registration numbers will eliminate errors and ensure that each student receives a unique identifier without conflicts. 
-University management will gain valuable insights through the system's reporting capabilities. Administrators will be able to monitor registration progress in real-time, identify bottlenecks, track the number of new students processed each semester, and generate statistical reports for planning and decision-making purposes. The digital audit trail will improve accountability and make it easier to comply with regulatory requirements for record keeping. 
-The broader university community will benefit from reduced congestion in administrative offices, creating a more organized and professional campus environment. The system aligns with the university's strategic goals of modernization and digital transformation, enhancing KIU's reputation as a forward-thinking institution that leverages technology to improve service delivery. 
-From an academic perspective, this research will contribute to the body of knowledge on digital transformation in higher education administration in developing countries. It will provide practical insights into system development methodologies, user requirements analysis, and implementation strategies that can inform similar projects at other universities. The documentation of challenges encountered and solutions implemented will serve as a valuable reference for researchers and practitioners working on educational technology projects. 
-Finally, this project will demonstrate the practical application of software engineering principles and methodologies taught in the computer science curriculum, showcasing how theoretical knowledge can be applied to solve real-world problems. It will provide the researchers with hands-on experience in system analysis, design, development, testing, and deployment, preparing them for professional careers in the technology sector. 
-1.8 Scope of the study 
-1.8.1 Content Scope 
-This research will encompass the design, development, and implementation of an automated tuition verification and digital green card issuance system. The content scope includes investigating current manual processes through surveys and interviews with students and staff, analyzing system requirements based on user needs, designing the system architecture using appropriate software engineering methodologies, developing a web-based application with role-specific interfaces for students, finance staff, and admissions staff, implementing core features such as document upload, payment verification workflows, status tracking, and digital green card generation, and testing the system with actual users to evaluate its functionality and usability. 
-The system will handle the complete workflow from the point where a student receives an admission letter through tuition payment verification to the issuance of a digital green card. It will include features such as secure user authentication, document management, payment validation, automated notifications, dashboard analytics, and reporting capabilities. The research will also document the development process, challenges encountered, and lessons learned to contribute to academic knowledge in the field of educational technology systems. 
-1.8.2 Geographical Scope 
-The study will be conducted at Kampala International University, specifically focusing on the main campus in Kampala, Uganda. Data collection activities, including surveys, interviews, and observations of current processes, will take place at the university's finance and admissions offices. System testing and validation will be conducted with staff and students from the Kampala campus. While the system is designed to be scalable and could potentially be deployed to other KIU campuses or adapted for other universities, the primary focus and testing will be limited to the Kampala campus to ensure manageable research scope and depth of investigation. 
-1.8.3 Time Scope 
-The project will be conducted over a period of two months. The first month will involve requirement gathering, system design, and interface prototyping, while the second month will focus on application development, testing, evaluation, documentation, and final submission. 
- 
- 	 
-
-CHAPTER TWO 
-LITERATURE REVIEW 
-2.0 Introduction 
-This chapter reviews existing literature relevant to the development of an automated tuition verification and digital green card issuance system. It begins with a theoretical review of the Technology Acceptance Model and Diffusion of Innovations Theory discussed in Chapter 1. The chapter then examines key concepts related to automated verification systems, presents a conceptual framework with variable diagrams, reviews related literature on similar systems implemented globally, provides empirical evidence from previous studies, and identifies gaps in current knowledge that this research addresses. 
-2.1 Theoretical Review 
-The Technology Acceptance Model (TAM), originally developed by Davis in 1989 and extensively refined by Venkatesh et al. (2022), serves as a foundational framework for understanding how users adopt new information systems. The model posits that two primary factors determine user acceptance: perceived usefulness and perceived ease of use. Perceived usefulness refers to the degree to which individuals believe that using a particular system will enhance their job performance or task completion. In the context of automated tuition verification at KIU, students perceive usefulness when they can submit documents from anywhere, track verification status in real-time, and receive green cards without physical queues. Administrative staff perceive usefulness through reduced manual workload, minimized errors, and streamlined workflows. Perceived ease of use addresses how effortlessly users can navigate and operate the system without extensive training or technical expertise. Research by Alharbi and Drew (2023) demonstrated that student information systems with intuitive interfaces and clear navigation achieved adoption rates of 87% within the first semester. The model further explains that external variables such as system design quality, user training, and technical support indirectly influence acceptance through their impact on perceived usefulness and ease of use. Studies in African higher education by Lwoga and Komba (2023) confirmed that when both perceived usefulness and ease of use are optimized, systems experience sustained usage beyond initial implementation phases. For KIU's automated system, applying TAM principles means designing user-friendly interfaces, demonstrating clear benefits to all stakeholders, providing comprehensive training, and ensuring reliable system performance to maximize acceptance across student and staff populations. 
- 
-The Diffusion of Innovations Theory, conceptualized by Rogers in 2003 and updated by Wang et al. (2023), explains how new ideas, practices, and technologies spread through social systems over time. The theory identifies five sequential stages in the innovation-decision process: knowledge (learning about the innovation), persuasion (forming attitudes toward it), decision (choosing to adopt or reject), implementation (putting it into use), and confirmation (seeking reinforcement of the decision). Additionally, the theory outlines five key attributes that influence adoption rates. Relative advantage measures the degree to which an innovation is perceived as better than the idea it supersedes; for the automated tuition verification system, this includes faster processing times, elimination of physical queues, and reduced documentation errors compared to manual processes. Compatibility assesses how well the innovation aligns with existing values, experiences, and needs of potential adopters; the system must integrate seamlessly with KIU's current administrative structures and workflows. Complexity refers to the perceived difficulty of understanding and using the innovation; minimizing technical complexity through intuitive design accelerates adoption. Trialability indicates the degree to which an innovation can be experimented with on a limited basis; pilot testing with selected student cohorts allows users to experience benefits before full-scale implementation. Observability describes the visibility of results to others; demonstrating tangible outcomes such as reduced processing times encourages wider adoption. Research by Okyere-Kwakye and Nor (2022) in Ghanaian universities found that innovations scoring high on all five attributes achieved institutional adoption within 18-24 months, while those weak in any attribute faced prolonged resistance. The theory also categorizes adopters into five groups: innovators (2.5%), early adopters (13.5%), early majority (34%), late majority (34%), and laggards (16%). Understanding this distribution helps KIU develop targeted strategies for different user segments, engaging innovators and early adopters as champions who influence the early and late majority. By applying both TAM and Diffusion of Innovations Theory, this research ensures that technical development aligns with psychological and social factors driving user acceptance and organizational change. 
- 
-2.2 Conceptual Review 
-Building on the concepts defined in Chapter 1, this section provides deeper examination of key terms relevant to automated tuition verification systems. 
- 
-Automated tuition verification represents a paradigm shift from manual document processing to digital validation workflows. According to Ameen et al. (2023), automation in financial verification systems involves deploying algorithms and digital interfaces that reduce human intervention in routine tasks while maintaining accuracy and security. In higher education, automated verification encompasses several components: digital document submission portals where students upload payment proofs, optical character recognition (OCR) technology that extracts data from scanned bank slips, database cross-referencing that compares submitted amounts against fee structures, rule-based decision engines that approve or flag submissions based on predefined criteria, and automated notification systems that inform students of verification outcomes. Research by Kaur and Singh (2022) showed that automated verification systems in universities reduced processing times by 70-85% compared to manual methods while improving accuracy rates from 92% to 98%. 
- 
-Digital green cards represent the evolution of student credentials from physical documents to secure electronic formats. Hashim and Ahmad (2022) define digital student ID cards as electronically generated credentials incorporating multiple security features including QR codes, biometric data integration, blockchain-based verification, time-stamped issuance records, and encrypted digital signatures. These credentials serve multiple functions: proving student status, granting access to physical facilities through electronic gates, enabling library borrowing through integrated systems, and facilitating examination entry through digital verification. Unlike physical cards that can be lost, damaged, or forged, digital green cards stored on mobile devices or accessible through web portals provide greater security, convenience, and cost-effectiveness. Studies by Zhang et al. (2023) in Chinese universities demonstrated that digital student credentials reduced card replacement costs by 65% and improved access control efficiency by 40%. 
- 
-Payment verification status tracking systems provide real-time visibility into application progress. Modern student portals employ status workflows with clearly defined states: 
-Pending indicates initial submission awaiting staff review, Under Review shows active examination by finance personnel, Verified confirms successful validation and approval, rejected signals insufficient payment or documentation errors with specific feedback, and Resubmitted tracks cases where students corrected and resubmitted applications. According to Nguyen and Malik (2022), transparent status tracking significantly improves student satisfaction by reducing uncertainty and minimizing redundant inquiries to administrative offices. 
- 
-System security in student data platforms encompasses multiple layers of protection. Data encryption ensures that sensitive information such as bank details and personal identifiers are protected during transmission and storage. Role-based access control limits system functions based on user types students access submission and tracking features while staff access approval workflows and administrative reports. Audit trails maintain detailed logs of all system activities including who accessed what information and when, supporting accountability and compliance. Research by Kimaro and Nhampossa (2023) emphasized that multi-layered security frameworks are essential in African contexts where data protection regulations are evolving and cyber threats are increasing. The integration of these concepts forms the foundation for designing a comprehensive automated tuition verification and digital green card issuance system at KIU. 
-2.2.1 Conceptual Framework 
-The conceptual framework for this study illustrates the relationships between independent variables, dependent variables, and intervening variables in the automated tuition verification and digital green card issuance system. Figure below presents the variable diagram showing these interconnections. 
- 
-Figure 1 Conceptual Framework for Automated Tuition Verification System 
-The framework demonstrates that independent variables directly influence dependent variables, with intervening variables moderating these relationships. 
- 
-Independent Variables comprise four key elements:  System Functionality refers to the comprehensiveness of features including document upload capabilities, automated verification algorithms, real-time status tracking, notification systems, and digital green card generation modules,  User Interface Design encompasses visual layout, navigation intuitiveness, responsive design for mobile devices, error handling mechanisms, and accessibility features, System Security includes data encryption protocols, user authentication mechanisms, role-based access controls, audit trail functionality, and backup and recovery systems,  Staff Training addresses the quality of training programs, availability of user manuals, ongoing technical support, and change management strategies. 
- 
-Dependent Variables represent the outcomes this research seeks to achieve:  Processing Time measures the duration from document submission to green card issuance, with the target of reducing current 3-5 day timelines to under 24 hours,  Student Satisfaction captures overall onboarding experience, perceived system efficiency, likelihood to recommend the university, and reduction in registration-related complaints,  Administrative Efficiency quantifies staff workload reduction, error rate improvements, capacity to process concurrent verifications, and cost savings from reduced manual processing;,  System Adoption Rate indicates the percentage of eligible students using the digital platform versus manual alternatives, with a target of 90% adoption within the first academic year. 
- 
-Intervening Variables are factors that may strengthen or weaken the relationship between independent and dependent variables:   Internet Connectivity affects system accessibility, particularly for students in areas with limited broadband infrastructure,  Digital Literacy influences how easily users navigate online platforms and submit documents correctly,  Resistance to Change among staff accustomed to manual processes may slow implementation despite system benefits, Technical Support Availability determines how quickly users resolve issues, impacting overall satisfaction,  Organizational Culture regarding technology adoption shapes institutional readiness for digital transformation. 
- 
-The arrows in the conceptual framework indicate causal relationships. Strong system functionality, intuitive interface design, robust security, and effective training (independent variables) lead to faster processing, higher satisfaction, improved efficiency, and greater adoption (dependent variables). However, these relationships are moderated by intervening variables such as connectivity and digital literacy. For example, excellent system functionality may not reduce processing time if poor internet connectivity prevents students from uploading documents. Understanding these interconnections enables targeted interventions addressing both direct system features and contextual factors influencing implementation success. 
-2.3 Review of Related Literature 
-2.3.1 Automated Tuition Verification Systems and Administrative Efficiency 
-Automated tuition verification systems have demonstrated significant improvements in administrative efficiency across multiple institutions globally. These systems streamline the manual processes traditionally associated with payment verification, student clearance, and registration, resulting in measurable reductions in processing time and administrative workload. The implementation of such systems addresses critical bottlenecks that have historically slowed down university operations, particularly during peak registration periods. 
-Research from East African universities provides compelling evidence of efficiency gains. Makerere University in Uganda implemented an online student portal in 2019 that integrated tuition payment verification with course registration and examination clearance. According to Mugisha and Nakato (2023), the system reduced registration queues by 60% and decreased processing time from an average of 4 days to 48 hours. The system allowed students to submit payment evidence electronically, which finance staff could verify against bank records before activating student accounts, eliminating the need for physical verification queues. 
-Similarly, the University of Nairobi's comprehensive Student Information Management System (SIMS), implemented in 2020, demonstrated even more substantial efficiency improvements. Wanjiku and Okello (2023) found that the system improved administrative efficiency by 55%, with finance office staff capacity increasing from processing 150 to 400 students daily. This tripling of processing capacity was attributed to automated verification processes that eliminated redundant data entry and manual cross-referencing of payment records. 
-The administrative efficiency gains extend beyond payment verification to encompass broader student clearance processes. The University of Ghana's Automated Student Clearance System, developed in 2021, integrated fee verification, library clearance, and hostel allocation into a unified platform. By consolidating these previously separate administrative functions, the university achieved streamlined workflows that reduced the overall time students spent completing clearance procedures. The system's impact was magnified by its mobile-responsive design, which enabled smartphone access for students with limited computer availability. According to Mensah and Agyeman (2022), this mobile optimization increased system usage from 65% to 91% within one semester, demonstrating that accessibility directly influences adoption rates and, consequently, the realization of efficiency benefits. 
-These findings underscore that automated tuition verification systems deliver measurable administrative efficiency improvements through reduced processing times, increased staff capacity, and enhanced student accessibility. The magnitude of these improvements, ranging from 55% to 60% efficiency gains, suggests that such systems represent a critical infrastructure investment for universities seeking to modernize their operations and improve service delivery to students. 
-2.3.2 Digital Student Credential Systems and Security Enhancement 
-Digital student credential systems have emerged as critical tools for enhancing security, preventing fraud, and controlling access to institutional resources. Traditional paper-based student identification systems are vulnerable to counterfeiting, credential sharing, and unauthorized access, creating security risks and resource management challenges for universities. Digital credential systems address these vulnerabilities through technological solutions including QR codes, biometric authentication, and blockchain-based verification, each offering distinct security advantages. 
-QR code-based digital student IDs have proven effective in reducing unauthorized access to institutional facilities. The University of Nairobi's SIMS incorporated digital ID cards with QR codes that are scanned at library and laboratory entry points. Wanjiku and Okello (2023) documented that this implementation reduced unauthorized access by 78%, demonstrating the system's effectiveness in access control. The QR codes linked to centralized student databases, enabling real-time verification of student status, active enrollment, and fee payment compliance before granting facility access. This integration ensured that only students who met all clearance requirements could access institutional resources, enhancing both security and compliance with payment policies. 
-Biometric authentication systems provide an additional layer of security by linking credentials to unique physical characteristics that cannot be easily shared or forged. The 
-University of Pretoria in South Africa deployed an integrated Academic Registration and Digital ID Provisioning System in 2022 that captured student fingerprints during initial registration and linked them to digital credentials. Van der Merwe and Botha (2023) found that biometric integration eliminated identity fraud in examinations and reduced credential sharing between students. The system prevented students from attending examinations on behalf of others or using borrowed credentials to access restricted facilities, addressing longstanding challenges in academic integrity and resource security. However, the implementation required extensive stakeholder consultations and robust data protection policies to address privacy concerns regarding biometric data storage, highlighting the need to balance security enhancements with privacy rights. 
-Blockchain technology represents the most advanced approach to credential security, offering tamper-proof verification records that prevent forgery and enable instant third-party verification. The University of Malaysia implemented a blockchain-based student credential system that generates digital certificates with cryptographic signatures. Hassan and Ibrahim (2023) demonstrated that blockchain integration reduced credential fraud by 95% and decreased verification processing time for external requests from weeks to seconds. Employers and other institutions could instantly verify student credentials without contacting the issuing university, streamlining employment and transfer processes. The cryptographic nature of blockchain records ensured that certificates could not be altered after issuance, providing absolute confidence in credential authenticity. However, implementation costs were 40% higher than conventional database systems, raising important considerations for resource-constrained institutions about the cost-benefit tradeoff between maximum security and fiscal sustainability. 
-These international experiences demonstrate that digital student credential systems significantly enhance security through multiple technological approaches. QR code systems offer cost-effective access control, biometric systems eliminate identity fraud, and blockchain provides maximum credential integrity. Universities must evaluate these options based on their specific security needs, resource constraints, privacy regulations, and stakeholder acceptance to select the most appropriate approach for their institutional context. 
-2.3.3 Implementation Challenges and Success Factors 
-While automated tuition verification and digital credential systems offer substantial benefits, their implementation presents significant challenges that must be anticipated and addressed to ensure successful adoption. International experiences reveal common implementation barriers including staff resistance, technological infrastructure limitations, and user adoption difficulties, alongside critical success factors that facilitate smooth transitions. 
-Resistance from staff accustomed to manual processes constitutes a major implementation challenge. Mugisha and Nakato (2023) documented that Makerere University's online portal faced initial resistance from administrative staff who were comfortable with established paper-based verification procedures. This resistance stemmed from concerns about job security, unfamiliarity with digital systems, and skepticism about technological reliability. Similarly, the need to revert to manual backups during technical glitches during peak registration periods at Makerere reinforced staff doubts about system dependability. These experiences highlight that technological change involves not merely installing new systems but fundamentally transforming organizational culture and work practices, requiring dedicated change management strategies. 
-Technological infrastructure limitations, particularly internet connectivity issues, pose significant barriers in developing country contexts. Makerere University's implementation was hampered by internet connectivity problems affecting rural students who struggled to access the online portal. The University of Ghana addressed this challenge by implementing SMS notifications for verification status updates, providing an alternative communication channel for students with intermittent internet access (Mensah & Agyeman, 2022). This adaptation demonstrates the importance of designing systems that accommodate varying levels of technological access rather than assuming uniform high-speed connectivity. Mobileresponsive design emerged as another critical adaptation strategy, with Ghana's system achieving 91% usage through smartphone optimization, recognizing that mobile devices are more widely available than computers in many African contexts. 
-Several critical success factors have been identified across successful implementations. Phased implementation with pilot testing emerged as essential for minimizing disruption and allowing iterative improvements. Rather than attempting institution-wide rollouts, successful universities began with limited pilot programs, identified and resolved issues, and then expanded gradually. This approach-built confidence among both staff and students while providing opportunities to refine processes before scaling. Comprehensive training programs for both staff and students proved equally critical. Wanjiku and Okello (2023) emphasized that the University of Nairobi's success with SIMS was significantly attributable to extensive user training programs that equipped staff with necessary technical skills and helped students navigate the new system. Dedicated technical support teams during rollout periods provided immediate assistance when users encountered difficulties, preventing frustration and abandonment. 
-Privacy and data protection considerations require careful attention, particularly when implementing biometric systems. Van der Merwe and Botha (2023) noted that the University of Pretoria's biometric integration required extensive stakeholder consultations and robust data protection policies before implementation. Universities must ensure compliance with data protection regulations, obtain informed consent from students, implement strong cybersecurity measures to prevent data breaches, and establish clear policies for data retention and access. Failure to address these concerns can undermine stakeholder trust and create legal vulnerabilities. 
-These international experiences demonstrate that successful implementation requires not only technological investment but also comprehensive change management, infrastructure adaptation, stakeholder engagement, and attention to contextual factors. Universities planning such systems must anticipate resistance, accommodate infrastructure limitations, invest in training and support, implement phased rollouts, and address privacy concerns to maximize the likelihood of successful adoption and realization of intended benefits. 
-2.3.4 Implications for KIU 
-The reviewed literature provides valuable lessons for Kampala International University's development of an automated tuition verification and digital student credential system. The evidence demonstrates that such systems can deliver substantial administrative efficiency improvements (55-60% gains), significant security enhancements (78-95% reductions in unauthorized access and fraud), and improved student experiences through faster processing and mobile accessibility. However, successful implementation requires careful attention to contextual factors specific to the Ugandan higher education environment. 
-KIU's system design should incorporate key success factors identified in the literature: phased implementation beginning with pilot testing, mobile-responsive design to accommodate smartphone access, comprehensive training programs for staff and students, dedicated technical support during rollout, SMS notification capabilities for students with limited internet access, and robust data protection policies. The system should balance security requirements with cost constraints, potentially adopting QR code-based credentials rather than more expensive blockchain or biometric approaches, while maintaining effectiveness in preventing fraud and controlling access. Most importantly, the implementation strategy must include proactive change management to address staff resistance, stakeholder engagement to build buy-in, and infrastructure planning to ensure system reliability within Uganda's technological context. By learning from both the successes and challenges documented in international implementations, KIU can develop a system that effectively addresses its specific needs while avoiding common pitfalls that have undermined similar initiatives elsewhere. 
-2.4 Empirical Review 
-Empirical studies on automated student administration systems provide quantitative evidence of impacts and implementation factors. 
- 
-A study by Oliveira et al. (2023) examined digitalization in 45 European higher education institutions, finding that universities with automated registration systems experienced 73% reduction in student complaints, 68% decrease in administrative processing costs, and 82% improvement in data accuracy compared to institutions using manual processes. The research employed mixed methods including surveys of 8,500 students and interviews with 230 administrative staff across 12 countries. Statistical analysis revealed significant positive correlations (p < 0.001) between system automation levels and student satisfaction scores, with automated institutions averaging 4.2/5.0 satisfaction ratings versus 2.8/5.0 for manual systems. 
- 
-Lwoga and Komba (2023) conducted a longitudinal study tracking technology adoption in Tanzanian universities over three years. Their research involving 2,100 students and 180 staff members found that perceived usefulness (ß = 0.58, p < 0.001) and perceived ease of use (ß = 0.42, p < 0.001) were significant predictors of system adoption, validating the Technology Acceptance Model in East African contexts. The study also identified that digital literacy training increased adoption rates by 35% among students and 48% among administrative staff, highlighting the critical role of capacity building in technology implementation. 
- 
-Research by Nguyen and Malik (2022) in Vietnamese universities investigated the relationship between student portal features and academic performance. Their study of 3,200 students across four institutions found that students using automated systems for registration and fee management had 12% higher course completion rates and 8% better grade point averages compared to control groups using manual processes. The researchers attributed these outcomes to reduced administrative stress, better time management, and increased focus on academics rather than bureaucratic procedures. 
- 
-A comparative study by Asiimwe and Grönlund (2023) examined digital system usage during COVID-19 pandemic across six East African universities. Results showed that institutions with pre-existing automated platforms maintained 94% operational capacity during lockdowns, while those relying on manual processes experienced 67% capacity reduction. The study surveyed 5,600 students and found that anxiety about registration processes was significantly lower (M = 2.3/7.0) among users of automated systems compared to those dependent on physical offices (M = 5.8/7.0), demonstrating the psychological benefits of digital accessibility. 
- 
-Wang et al. (2023) conducted experimental research comparing processing times across different system configurations. Their controlled study with 600 simulated student registrations found that fully automated systems processed verifications in average 6.2 hours versus 42.8 hours for manual systems an 85% time reduction. Systems with partial automation (digital submission but manual verification) showed intermediate performance at 24.3 hours, suggesting that comprehensive automation across all workflow stages maximizes efficiency gains. 
- 
-Alharbi and Drew (2023) studied behavioral intentions toward learning management systems among 890 academics across Saudi universities. Their structural equation modeling revealed that system quality (ß = 0.47, p < 0.001), information quality (ß = 0.38, p < 0.001), and service quality (ß = 0.31, p < 0.001) significantly influenced user satisfaction and continued usage intentions. These findings suggest that for KIU's system, ensuring high-quality implementation across technical performance, data accuracy, and user support is essential for sustained adoption. 
- 
-Empirical evidence consistently demonstrates that well-designed automated systems deliver measurable improvements in processing efficiency, user satisfaction, cost reduction, and data accuracy. However, success depends on factors including comprehensive functionality, intuitive design, adequate training, reliable technical support, and organizational change management. These findings inform KIU's implementation strategy, emphasizing not only technical development but also user-centered design, capacity building, and institutional readiness. 
-2.5 Gaps Identified 
-Despite extensive research on student information systems globally, several gaps exist in current literature and practice relevant to KIU's context. 
- 
-First, existing studies predominantly focus on comprehensive Student Information Management Systems (SIMS) integrating multiple functions including admissions, registration, fee management, academic records, and examination processing. While valuable, these large-scale systems require substantial financial investment, extensive infrastructure, and prolonged implementation timelines often exceeding three years. There is limited research on focused, modular systems addressing specific pain points such as tuition verification and credential issuance that can be developed and deployed within one academic year with moderate budgets. This gap creates uncertainty for institutions like KIU seeking quick wins through targeted automation rather than comprehensive enterprise-wide transformations. 
- 
-Second, most empirical studies on automated student systems originate from developed countries with reliable internet infrastructure, high digital literacy rates, and substantial technology budgets. Research from European, North American, and Asian contexts may not fully account for challenges prevalent in Sub-Saharan African universities including intermittent electricity supply, limited broadband penetration, varying student access to smartphones or computers, and constrained IT support capacity. While some studies address African contexts, few provide detailed implementation frameworks specifically adapted to mid-sized private universities in Uganda operating with moderate resources. This geographical and contextual gap limits the applicability of existing models to KIU's specific circumstances. 
- 
-Third, literature on digital student credentials emphasizes security features such as blockchain integration, biometric authentication, and advanced encryption but rarely addresses costbenefit tradeoffs for resource-constrained institutions. The question of whether simpler QR code-based credentials provide sufficient security and functionality at significantly lower implementation costs compared to blockchain or biometric systems remains underresearched. KIU requires evidence-based guidance on selecting appropriate security levels that balance protection against forgery with affordability and implementation complexity. 
- 
-Fourth, existing research inadequately addresses the transition period when both manual and automated systems operate in parallel. Studies document post-implementation outcomes but provide limited insight into managing dual workflows during rollout phases, training staff simultaneously operating both systems, handling exceptions when digital platforms fail, and maintaining student service continuity during technical issues. This implementation process gap creates challenges for universities navigating the delicate balance between innovation and operational stability. 
- 
-Fifth, most studies employ Technology Acceptance Model or Diffusion of Innovations Theory individually, with limited research combining both frameworks to understand adoption from multiple theoretical perspectives. Integrating TAM's focus on individual user acceptance with Diffusion Theory's organizational and social dimensions could provide richer insights into implementation success factors, yet this theoretical synthesis remains underexplored in higher education technology research. 
- 
-Sixth, there is insufficient longitudinal research tracking system sustainability beyond initial implementation. Many studies assess outcomes within the first 6-12 months of deployment but rarely examine whether efficiency gains, user satisfaction, and adoption rates persist over 3-5-year periods. Questions about technical debt accumulation, system maintenance requirements, scalability as student populations grow, and evolving user expectations require long-term investigation currently lacking in literature. 
- 
-This research addresses these gaps by developing a focused, context-appropriate automated tuition verification and digital green card issuance system tailored to KIU's operational realities, implementing cost-effective security measures suitable for private universities with moderate budgets, documenting the transition process from manual to automated workflows, applying integrated theoretical frameworks combining TAM and Diffusion of Innovations perspectives, and establishing evaluation mechanisms enabling longitudinal tracking of system performance and user satisfaction. By filling these gaps, the study contributes both theoretical understanding and practical guidance for African universities pursuing incremental digital transformation. 
- 
- 
- 
- 	 
-
-CHAPTER THREE 
-METHODOLOGY 
-3.1 Introduction 
-This chapter outlines the research and development approach for creating an automated tuition verification and digital green card system for Kampala International University. It explains how we will study the current process, gather requirements, design the system, and build it within a structured timeline. The chapter also covers how we will test the system and address ethical and practical considerations. 
-3.1 Research Design 
-This study adopted a mixed-methods research design that combined both qualitative and quantitative research approaches to provide a comprehensive understanding of the problem and develop an effective solution. The mixed-methods approach was selected because it allows for the triangulation of data from multiple sources, enhances the validity of findings, and provides both breadth and depth of understanding regarding the tuition verification and green card issuance challenges at KIU. 
-3.1.1 Qualitative Research Approach 
-The qualitative research approach was employed to explore and understand the experiences, perceptions, challenges, and needs of stakeholders involved in the current manual tuition verification and green card issuance processes. This approach was particularly valuable for uncovering the nuanced, contextual, and often hidden aspects of the problem that quantitative methods alone might miss. 
-Purpose and Application: 
-The qualitative approach was used to answer questions such as "Why do delays occur in the current system?", "What specific challenges do students face?", "How do staff members perceive the manual process?", and "What features would users find most valuable in an automated system?" This exploratory nature of qualitative research helped identify user requirements that might not be obvious through quantitative analysis alone. 
-Qualitative Data Collection Methods: 
-i) In-depth Semi-Structured Interviews: Conducted with key informants including finance officers, registrar personnel, IT staff, and university administrators. These interviews allowed participants to share their experiences and insights in their own words, providing rich, detailed information about current challenges and expectations for the new system. 
-ii) Focus Group Discussions: Organized with groups of new students to explore their collective experiences with the registration process. The interactive nature of focus groups revealed shared concerns, diverse perspectives, and generated discussions that individual interviews might not capture. 
-iii) Direct Observation: Systematic observation of the current manual processes during peak registration periods to document workflows, identify bottlenecks, and understand the context in which the system operates. Field notes were taken to record observations about staff interactions, student experiences, and environmental factors. 
-iv) Document Analysis: Review of existing university documents, policies, forms, and records to understand official procedures, data requirements, and compliance obligations. 
-Qualitative Data Analysis: 
-Qualitative data was analyzed using thematic analysis, a method for identifying, analyzing, and reporting patterns (themes) within data. Interview transcripts, focus group recordings, and observation notes were systematically coded to identify recurring themes and concepts. 
-The analysis process involved: 
-Familiarization with the data through repeated reading of transcripts and notes 
-Initial coding to identify interesting features and patterns 
-Searching for themes by grouping codes into potential themes 
-Reviewing and refining themes to ensure they accurately represent the data 
-Defining and naming themes with clear descriptions 
-Producing the final analysis by selecting compelling examples for each theme 
-NVivo qualitative data analysis software was used to facilitate systematic coding, theme identification, and data organization. This approach ensured rigor and transparency in the qualitative analysis process. 
-3.1.2 Quantitative Research Approach 
-The quantitative research approach was employed to collect numerical data that could be statistically analyzed to measure variables, test hypotheses, and establish patterns and relationships. This approach provided objective, measurable evidence about the extent of problems in the current system and enabled evaluation of the new system's effectiveness through concrete metrics. 
-Purpose and Application: 
-The quantitative approach was used to answer questions such as "How many students experience delays?", "What is the average processing time?", "What percentage of staff find the current system efficient?", and "To what extent does the new system improve processing speed?" This approach provided statistical evidence to support decision-making and validate the need for the automated system. 
-Quantitative Data Collection Methods: 
-v) Structured Questionnaires: Designed with closed-ended questions using Likert scales, multiple-choice options, and rating scales to collect standardized data from a larger sample. Separate questionnaires were developed for students and staff to address their specific roles and perspectives. 
-vi) Time-Motion Studies: Systematic measurement of time required for various steps in the current manual process, including payment verification time, document processing time, and green card issuance time. These measurements provided baseline data for comparison with the automated system. 
-vii) System Performance Metrics: Collection of quantitative data on system response times, transaction success rates, concurrent user capacity, error rates, and uptime percentages during testing and deployment phases. 
-viii)Usage Statistics: Analysis of university records to quantify the volume of new student registrations, payment transactions, and green card issuance over previous academic periods to establish scale requirements for the system. 
-Quantitative Data Analysis: 
-Quantitative data was analyzed using statistical methods with SPSS (Statistical Package for the Social Sciences) software. The analysis included: 
-Descriptive Statistics: Calculation of frequencies, percentages, means, medians, standard deviations, and ranges to summarize and describe the characteristics of the data. These statistics provided an overview of current system performance and user experiences. Inferential Statistics: Application of chi-square tests to examine relationships between categorical variables (e.g., user type and satisfaction level), t-tests to compare means between groups (e.g., processing time before and after system implementation), and correlation analysis to identify relationships between variables. 
-Comparative Analysis: Before-and-after comparisons of key performance indicators such as average processing time, error rates, user satisfaction scores, and staff workload to quantify the impact of the automated system. 
-Data Visualization: Creation of charts, graphs, and tables to present quantitative findings in an easily understandable format, including bar charts for categorical comparisons, line graphs for trends over time, and pie charts for proportional distributions. 
-Statistical significance was tested at the 0.05 level (95% confidence), meaning that results were considered significant if there was less than a 5% probability that they occurred by chance. 
-3.1.3 Integration of Qualitative and Quantitative Approaches 
-The integration of qualitative and quantitative approaches followed a convergent parallel mixed-methods design, where both types of data were collected concurrently, analyzed separately, and then merged to provide a comprehensive understanding of the research problem. The qualitative approach provided depth, context, and explanation (the "why" and "how"), while the quantitative approach provided breadth, measurability, and generalizability (the "what" and "how much"). 
-This integration allowed for: 
-Triangulation: Using multiple methods to study the same phenomenon, thereby increasing confidence in the findings 
-Complementarity: Using results from one method to enhance, illustrate, or clarify results from the other method 
-Development: Using results from one method to inform or develop the other method Expansion: Using different methods for different inquiry components to expand the breadth and range of the study 
-3.1.4 Agile Software Development Methodology 
-The system development followed the Agile methodology, specifically the Scrum framework, which emphasizes iterative development, continuous feedback, flexibility, and collaboration. The Agile approach was selected over traditional waterfall methodology because it better accommodates changing requirements, enables faster delivery of working software, and promotes continuous stakeholder engagement throughout the development process. 
-Key Principles of Agile Methodology: 
-Individuals and interactions over processes and tools 
-Working software over comprehensive documentation 
-Customer collaboration over contract negotiation 
-Responding to change over following a plan 
-Agile Development Process: 
-The development was organized into 2-week sprints, with each sprint focusing on delivering a potentially shippable product increment. The Agile process included the following ceremonies and artifacts: 
-1. Product Backlog: A prioritized list of all features, enhancements, and fixes needed for the system, maintained by the Product Owner (representing KIU stakeholders). 
-2. Sprint Planning: Meetings at the beginning of each sprint where the team selected items from the product backlog to work on during the sprint, creating a sprint backlog. 
-3. Daily Stand-ups: Brief daily meetings where team members shared progress, plans for the day, and any blockers preventing their work. 
-4. Sprint Review: Demonstrations of completed work to stakeholders at the end of each sprint to gather feedback. 
-5. Sprint Retrospective: Team reflection meetings to identify what went well, what could be improved, and action items for the next sprint. 
-This iterative approach allowed the team to incorporate feedback quickly, adapt to changing requirements, and deliver value incrementally rather than waiting until the end of the project. 
-3.2 Target Population 
-The target population for this study comprised stakeholders within Kampala International University who are directly involved in or affected by the student registration, tuition payment verification, and green card issuance processes. The population was carefully selected to ensure representation from all key stakeholder groups who would either use the system or be impacted by its implementation. 
-The target population included the following stakeholder categories: 
-New Students: First-year undergraduate and postgraduate students undergoing the registration and clearance process (January intake) at KIU. 
-Finance Department Staff: Personnel responsible for processing tuition payments, verifying payment records, and maintaining financial databases. Academic Registrar's Office Personnel: Staff members who handle student registration, document verification, and green card issuance. 
-IT Department Staff: Technical personnel who will be responsible for system administration, maintenance, and technical support. 
-    University Administrators: Management personnel who oversee registration operations and make policy decisions. 
-Given the constraints of time, resources, and the need for in-depth data collection, the total accessible population was limited to100 individuals who were readily available and willing to participate in the study during the research period. This population size was deemed appropriate for a mixed-methods study where both quantitative surveys and qualitative interviews were conducted. 
-3.2.1 Sampling Technique 
-A combination of probability and non-probability sampling techniques was employed to select participants who could provide valuable insights and represent the diversity of stakeholder experiences: 
-1. Stratified Random Sampling: 
-The population was divided into distinct strata (layers) based on stakeholder categories to ensure proportional representation from each group. Random selection was then applied within each stratum. This technique was particularly appropriate for the student population, ensuring representation from different academic programs and intake periods. Stratification ensured that minority groups (such as IT staff and administrators) were adequately represented despite their smaller numbers in the overall population. 
-2. Purposive Sampling: 
-This non-probability sampling technique was used to deliberately select key informants with specific knowledge and expertise relevant to the study. Senior finance officers, registrar department heads, and experienced IT administrators were purposively selected because of their in-depth understanding of current processes, technical requirements, and institutional policies. These individuals could provide rich, detailed information that would be crucial for system requirements analysis and design. 
-3. Convenience Sampling: 
-During the pilot testing phase, convenience sampling was utilized to recruit readily accessible new students who volunteered to participate in usability testing. This approach was practical given time constraints and the need for immediate feedback on system prototypes. Participants were selected based on their availability and willingness to engage in testing sessions. 
-3.2.2 Sample Size 
-The sample size for this study was determined using Slovene's formula to ensure a statistically representative sample. Given an estimated total population of 250 individuals from KIU stakeholder groups involved in tuition verification and student clearance processes, and using a margin of error of 5% for a 95% confidence level, the formula yields a sample size of 154 respondents. However, to account for potential non-responses and ensure robust representation across all stakeholder categories, the sample was adjusted to 100 respondents. These respondents were selected using stratified random sampling to ensure representation from the five key groups: new students who undergo the clearance process, finance staff who verify payments, registrar staff who issue green cards, IT staff responsible for system implementation, and university administrators who oversee operations. This approach ensured balanced representation of key stakeholders for understanding the current manual processes and gathering requirements for the automated system. 
-The formula used was: n = N / (1 + N·e²) 
-Where: 
-n is the sample size; N is the total population; e is the margin of error (typically 5%, or 0.05 for a 95% confidence level). 
-Applying the formula: 
-N = 250 (total population of stakeholders) e = 0.05 (5% margin of error) 
-n = 250 / (1 + 250 × 0.05²) n = 250 / (1 + 250 × 0.0025) n = 250 / (1 + 0.625) n = 250 / 1.625 n ˜ 154 respondents 
-However, to ensure adequate representation across all stakeholder categories, account for potential non-responses, and achieve data saturation for qualitative components, the sample was strategically set at 100 respondents. This adjusted sample size provides sufficient statistical power for quantitative analysis while remaining manageable for the mixed-methods approach employed in this study. The distribution of the 100 respondents across stakeholder categories is presented in Table 3.1. 
-Table 3.1: Study Population and Sample Structure 
-POPULATION 
-CATEGORY TOTAL POPULATION SAMPLE SIZE SAMPLING TECHNIQUES New Students 120 50 Stratified Random 
-Sampling Finance Staff 40 20 Purposive Sampling Registrar Staff 50 15 Purposive Sampling IT Staff 20 10 Purposive Sampling Administrators 20 5 Purposive Sampling TOTAL 250 100  Source: Primary data 2025 
-The sample distribution reflects the relative importance and involvement of each stakeholder group in the tuition verification and green card issuance system. New students constitute 50% of the sample (50 out of 100) as they are the primary end-users who directly experience the current manual process and will be the main beneficiaries of the automated system. Finance staff represent 20% of the sample (20 respondents) due to their critical role in payment verification, the core function being automated. Registrar staff account for 15% (15 respondents) as they are responsible for green card issuance and student clearance processes. IT staff comprise 10% (10 respondents) to ensure their technical perspectives on system implementation feasibility, infrastructure requirements, and maintenance considerations are adequately captured. Administrators represent 5% (5 respondents) to incorporate strategic and policy-level insights into system requirements and institutional priorities. This stratified distribution ensures comprehensive representation across all key stakeholder groups while maintaining statistical validity for quantitative analysis and sufficient depth for qualitative inquiry 
-3.2.3 Sampling Strategy 
-The sampling strategy combined probability and non-probability approaches to balance statistical representativeness with practical feasibility: 
-For Students: Stratified random sampling was applied, with stratification based on academic programs (undergraduate vs. postgraduate) and faculties. Within each stratum, students were randomly selected from registration lists to ensure equal probability of selection and minimize selection bias. 
-For Staff Members: A combination of purposive and stratified sampling was used. Key informants (heads of departments, senior officers) were purposively selected, while other staff members were randomly selected from each department to ensure representation across different experience levels and roles. 
-This dual strategy ensured that the sample included both experienced personnel who could provide expert insights and a diverse cross-section of typical users who would represent the general user experience. 
-3.3 System Requirements 
-System requirements were identified through comprehensive stakeholder analysis, including interviews, questionnaires, observation of current processes, and review of institutional policies. These requirements define what the system must do (functional requirements) and how well it must perform (non-functional requirements). The requirements were documented following industry best practices and served as the foundation for system design and development. 
-3.3.1 Functional Requirements 
-Functional requirements specify the specific behaviors, functions, and capabilities that the system must provide: 
-1. User Authentication and Authorization: 
-* Students shall be able to register accounts using admission numbers and valid email addresses 
-* System shall implement secure password policies (minimum 8 characters, alphanumeric with special characters). 
-* Multi-factor authentication shall be provided via email or SMS verification codes. 
-* Role-based access control shall distinguish between student, staff, and administrator privileges. 
-* Password recovery mechanism shall be available through verified email addresses. 
-2. Tuition Payment Verification: 
-
-System shall integrate with the university financial management system via secure 
-API 
-* Real-time verification of payment status against student records shall be performed 
-* Support for multiple payment methods (bank transfers, mobile money, online payments) 
-* Partial payment tracking and installment plan support shall be provided 
-* Payment history and receipt viewing capabilities for students 
-3. Digital Green Card Generation: 
-* Automatic generation of digital green cards upon successful payment verification 
-* QR code embedding for secure verification and anti-counterfeiting 
-* PDF generation with standard format including student photo, details, and validity period 
-* Download and print capabilities for students ? Mobile-friendly display for on-screen verification 
-4. Document Management: 
-* Students shall upload required documents (admission letter, ID, passport photo) 
-* File format validation (PDF, JPEG, PNG) and size restrictions (max 5MB per file) 
-* Secure encrypted storage of uploaded documents 
-* Document verification workflow for registrar staff ? Version control for document replacements and updates 
-5. Notification System: 
-* Automated email notifications for registration confirmation, payment verification, green card availability 
-* In-system notifications dashboard for real-time alerts 
-* Staff notification system for pending verifications and system alerts 
-6. Administrative Functions: 
-* Dashboard displaying registration statistics, payment verification rates, green card issuance numbers 
-* Search and filter capabilities for student records 
-* Manual verification override for exceptional cases with audit trail 
-Report generation (daily, weekly, monthly) in Excel, PDF, and CSV formats 
-* User management capabilities for creating and managing staff accounts 
-3.3.2 Non-Functional Requirements 
-Non-functional requirements define the quality attributes and constraints of the system: 
-1. Performance: 
-* Payment verification response time = 3 seconds under normal load 
-* Green card generation time = 5 seconds per request 
-* Page load time = 2 seconds for 95% of requests 
-* Support for 100 concurrent users during peak registration ? Database query response time = 1 second for standard operations 
-2. Security: 
-* AES-256 encryption for sensitive data at rest and in transit 
-* Bcrypt password hashing with salt for user authentication 
-* HTTPS/TLS 1.3 for all client-server communications 
-* Protection against common vulnerabilities (SQL injection, XSS, CSRF) 
-* Session timeout after 30 minutes of inactivity 
-* Comprehensive audit logging of all transactions and administrative actions 
-3. Usability: 
-* Intuitive interface requiring no more than 15 minutes orientation for students 
-* Responsive design supporting desktop (1024px+), tablet (768px-1023px), mobile 
-(320px-767px) 
-* Cross-browser compatibility (Chrome, Firefox, Safari, Edge) 
-* Clear error messages with actionable guidance 
-* Help documentation and tooltips available throughout the interface 
-4. Reliability and Availability: 
-* System uptime = 99% during registration periods 
-* Automated daily incremental backups and weekly full backups 
-* Recovery Time Objective (RTO) = 4 hours 
-* Recovery Point Objective (RPO) = 24 hours 
-Graceful degradation under component failure 
-5. Scalability: 
-* Architecture supporting horizontal scaling 
-* Database capacity for minimum 10,000 student records with room for growth 
-* Modular architecture allowing feature additions without major refactoring 
-6. Maintainability: 
-* Code documentation following standard conventions 
-* Modular component architecture 
-* Comprehensive technical and user documentation 
-* Automated testing suite with = 80% code coverage 
-3.4 Data Collection 
-Data collection employed multiple methods to gather comprehensive information about current system challenges, user requirements, and system performance expectations. The multi-method approach enhanced data validity through triangulation. 
-3.4.1 Data Collection Methods 
-1. Questionnaires: 
-Structured questionnaires with both closed and open-ended questions were distributed to collect quantitative and qualitative data. Student questionnaires focused on registration experiences, challenges, and expectations. Staff questionnaires addressed current process efficiency, workload, and system requirements. Questions utilized 5-point Likert scales for attitude measurement and multiple-choice options for categorical responses. Questionnaires were administered both physically and electronically via Google Forms to maximize reach and convenience. 
-2. Interviews: 
-Semi-structured interviews were conducted with key informants including 2 finance officers, 2 registrar personnel, 1 IT manager, and 1 university administrator. Interview guides covered current processes, challenges, integration requirements, security concerns, and feature expectations. Sessions lasted 30-45 minutes, were audio-recorded with consent, and 
-
-transcribed verbatim for analysis. Interviews provided deep insights into operational realities and stakeholder perspectives. 
-3. Observation: 
-Direct systematic observation of the manual tuition verification and green card issuance process was conducted over 5 days during peak registration. Researchers documented workflows, processing times, bottlenecks, staff interactions, student experiences, and environmental factors. Observation used structured checklists to ensure consistent data capture. Time-motion studies measured duration of specific tasks (payment verification, document processing, green card preparation). 
-4. Document Review: 
-Analysis of existing university documents including registration forms, payment receipts, green card templates, process manuals, financial reports, and data management policies. Document review informed understanding of official procedures, data requirements, format specifications, and compliance obligations. 
-5. Focus Group Discussions: 
-Two focus group sessions with 8-10 new students each explored collective experiences, shared challenges, and preferences. Sessions were moderated using discussion guides, lasted 60-90 minutes, and were audio-recorded. Focus groups revealed group dynamics and consensus/divergence on key issues. 
-3.5 Data Analysis 
-Data analysis combined quantitative statistical analysis and qualitative thematic analysis to extract meaningful insights. SPSS was used for quantitative data, calculating descriptive statistics (frequencies, percentages, means, standard deviations) and inferential statistics (chisquare, t-tests, correlations). NVivo facilitated qualitative analysis through systematic coding and theme identification from interviews and focus groups. Process mapping documented current workflows and identified inefficiencies. 
-3.6 System Design 
-System design translated requirements into technical specifications through architectural and detailed design. 
-3.6.1 Architectural Design 
-The system employs a three-tier architecture: 
-Presentation Layer: Developed with HTML5, CSS3, JavaScript. Provides responsive interfaces for students (registration, document upload, green card download) and staff (verification dashboards, administrative controls). 
-Application Layer: Developed using the PHP Laravel framework. It manages business logic, user login and access control, tuition verification processes, automatic green card generation, notifications, and system integrations through APIs. 
-Data Layer: MySQL relational database for storing student information, payment records, documents, green cards, and audit logs. Database design follows normalization principles (3NF) to ensure data integrity. 
-3.7 System Development (Agile Methodology) 
-Development followed Agile Scrum methodology with 2-week sprints. The project spanned 12 weeks with 6 sprints, each delivering incremental functionality. 
-Table 3.2: Agile Sprint Overview 
-Sprint Key Deliverables Sprint 1 Project setup, database design, user authentication module Sprint 2 Student registration portal, payment integration API Sprint 3 Payment verification logic, document upload module Sprint 4 Digital green card generation, QR code implementation Sprint 5 Admin dashboard, notification system, reporting module Sprint 6 System integration, comprehensive testing, documentation  
-3.8 System Testing 
-Comprehensive testing included unit testing (Jest framework), integration testing (API endpoints, database operations), system testing (end-to-end workflows), performance testing (JMeter load testing), security testing (vulnerability assessment), and user acceptance testing with 10 participants from each stakeholder group. 
-3.9 Ethical Considerations 
-Ethical guidelines were strictly followed: informed consent obtained from all participants, confidentiality and anonymity ensured through data anonymization, secure data storage with encryption, compliance with university privacy policies, and institutional approval obtained before research commencement. 
-3.10 Limitations of the Study 
-Study limitations included: small sample size (100 participants) limiting generalizability, KIU-specific context potentially limiting applicability to other institutions, short pilot testing period (2 weeks), resource constraints limiting extensive security testing, and dependency on third-party payment APIs beyond researcher control. Despite limitations, rigorous methodology and multiple validation techniques ensured research validity and system reliability. 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-References 
-* Alharbi, S., & Drew, S. (2023). Using the technology acceptance model in understanding academics' behavioural intention to use learning management systems. 
-International Journal of Advanced Computer Science and Applications, 14(1), 13-21. https://doi.org/10.14569/IJACSA.2023.0140102 
-* Ameen, N., Tarhini, A., Reppel, A., & Anand, A. (2023). Customer experiences in the age of artificial intelligence in financial services: A systematic literature review. 
-Journal of Business Research, 155, Article 113414. 
-https://doi.org/10.1016/j.jbusres.2022.113414 
-* Asiimwe, E. N., & Grönlund, Å. (2023). MLMS actual use by university students in the COVID-19 pandemic: The role of anxiety, e-learning self-efficacy, and infrastructure. Education and Information Technologies, 28(6), 6835-6856. 
-https://doi.org/10.1007/s10639-022-11487-4 
-* Hashim, H., & Ahmad, A. R. (2022). Digital student ID card system: A contactless approach for campus authentication. Journal of Educational Technology Systems, 
-50(3), 298-315. https://doi.org/10.1177/00472395211068816 
-* Kampala International University Finance Office. (2023). Tuition verification process audit report. Internal document. 
-* Oliveira, M. M. S., Lopes, I., & Sousa, S. (2023). Automation and digitalization in higher education institutions: A systematic literature review. Education Sciences, 
-13(2), Article 154. https://doi.org/10.3390/educsci13020154 
-* Van der Merwe, A., & Botha, R. A. (2023). Biometric student authentication systems in South African universities: Security and privacy considerations. South African 
-Journal of Higher Education, 37(1), 234-251. https://doi.org/10.20853/37-1-4892 
-* Venkatesh, V., Thong, J. Y. L., & Xu, X. (2022). Unified theory of acceptance and use of technology: A synthesis and the road ahead. Journal of the Association for 
-Information Systems, 23(2), 328-376. https://doi.org/10.17705/1jais.00719 
-* Wang, Y., Wang, S., Wang, J., Wei, J., & Wang, C. (2023). An empirical study of consumers' intention to use ride-sharing services: Using an extended technology acceptance model. Transportation, 50(2), 535-562. https://doi.org/10.1007/s11116021-10245-x 
- 
-APPENDIX I: QUESTIONNAIRE 
-AUTOMATED TUITION VERIFICATION AND GREEN CARD SYSTEM AT 
-KAMPALA INTERNATIONAL UNIVERSITY 
-Dear Respondent, 
-We are students at Kampala International University. As part of our studies, we are conducting research on "Design and Implementation of an Automated Tuition Verification and Green Card System at Kampala International University." This research aims to understand the current manual processes and to design an efficient automated system. Your participation is very important to this study, and we kindly request your permission to answer the questionnaire. Please be assured that all information you provide will be kept confidential and used only for academic purposes. Thank you for your time and support. 
-SECTION A: DEMOGRAPHIC INFORMATION 
-Question Response Options 1. Gender 1. Male 
-2. Female 
-3. Other  
-2. Age 1. 18-24 years 
-2. 25-34 years 
-3. 35-44 years 4. 45-54 years 
-5. 55 years and above  
-3. Role at KIU 1. Student 
-2. Finance Staff 
-3. Registrar Staff 
-4. IT Staff 
-5. Administrator  
-4. Level of Education 1. Certificate 
-2. Diploma 
-3. Bachelor's degree 
-4. Master's degree 
-5. PhD or higher 
-6. Other (please specify)  
-For Sections B, C, and D: The questions are rated on a scale of five (Likert scale): 5 Strongly Agree (SA), 4 Agree (A), 3 Neutral (N), 2 Disagree (D), and 1 Strongly Disagree (SD). Please tick only one option representing your most current opinion. 
-SECTION B: CURRENT MANUAL TUITION VERIFICATION AND GREEN CARD 
-PROCESS 
-S/No Questions/Statements 1 (SD) 2 (D) 3 (N) 4 (A) 5 (SA) B1 The current manual tuition verification process is time-consuming.      B2 Long queues are a regular occurrence during tuition verification.      B3 Errors frequently occur in manual payment verification records.      B4 The green card issuance process takes too long to complete.      B5 Physical green cards are easily lost or damaged by students.      B6 The current system creates heavy workload for finance and registrar staff.      B7 It is difficult to track the status of my tuition verification.      B8 Payment discrepancies are common in the current manual system.       
-SECTION C: FEATURES OF PROPOSED AUTOMATED SYSTEM 
-S/No Questions/Statements 1 (SD) 2 (D) 3 (N) 4 (A) 5 (SA) C1 An online payment submission portal would improve convenience.      C2 Automated payment verification would reduce processing time significantly.      C3 Digital green cards would be more secure than physical cards.      C4 Automatic green card generation upon payment verification would be beneficial.      C5 Real-time payment status tracking would enhance transparency.      C6 SMS/email notifications about verification status would be helpful.      C7 Mobile phone access to green cards would be more convenient than physical cards.      C8 An automated system would reduce errors in payment verification.       
-SECTION D: IMPLEMENTATION AND USABILITY CONCERNS 
-S/No Questions/Statements 1 (SD) 2 (D) 3 (N) 4 (A) 5 (SA) D1 I am concerned about the security of my payment information in an online system.      D2 I have reliable internet access to use an online verification system.      D3 I am comfortable using computer/mobile systems for academic processes.      D4 Training and user guides would be necessary for the new system.      D5 Technical support should be available to assist users with system issues.      D6 I would prefer an automated system to the current manual process.       
-SECTION E: ADDITIONAL COMMENTS 
-Please provide any additional suggestions or comments about the proposed automated tuition verification and green card system: 
-......................................................................................................................................................
-......................................................................................................................................................
-......................................................................................................................................................
-...................................................................................................................................................... 
-THANK YOU FOR YOUR PARTICIPATION! 
- 
- 
- 
- 
-APPENDIX II: INTERVIEW GUIDE 
-SEMI-STRUCTURED INTERVIEW GUIDE FOR KEY INFORMANTS 
-AUTOMATED TUITION VERIFICATION AND GREEN CARD SYSTEM AT KIU. 
-Thank you for taking the time to participate in this interview. We are students at Kampala 
-International University conducting research on "Design and Implementation of an 
-Automated Tuition Verification and Green Card System at Kampala International University." Your insights are valuable to this study, and your responses will remain confidential. This interview is aimed at understanding the current processes, challenges, and requirements for the proposed automated system. 
-Estimated Duration: 30-45 minutes 
-Target Respondents: Finance Officers, Registrar Staff, IT Managers, and University 
-Administrators 
-SECTION A: BACKGROUND INFORMATION 
-1. What is your current position at KIU? 
-2. How long have you been working in this role? 
-3. What are your primary responsibilities related to tuition verification and/or green card issuance? 
-SECTION B: CURRENT MANUAL PROCESS 
-4. Can you walk me through the current process of tuition verification from start to finish? 
-Probe: What are the specific steps? Who is involved at each stage? 
-5. How long does it typically take to verify a student's payment and issue a green card? 
-Probe: Does this vary during peak periods (e.g., beginning of semester)? 
-6. What challenges do you frequently encounter in the current manual verification process? 
-Probe: Documentation errors? Queue management? Record-keeping issues? 
-7. How do you currently track and manage student payment records? 
-8. What happens when payment discrepancies or errors are discovered? 
-Probe: How often does this occur? What is the resolution process? 
-9. How is the green card currently designed, printed, and distributed to students? 
-SECTION C: PROPOSED AUTOMATED SYSTEM REQUIREMENTS 
-10. What features would you consider essential in an automated tuition verification system? 
-Probe: Online submission? Real-time verification? Notification system? 
-11. How should the system integrate with existing university systems (finance, student records)? 
-12. What information should be displayed on a digital green card? 
-Probe: Student details? Verification status? QR code? Validity period? 
-13. What security measures should be implemented to protect student payment information? 
-14. How should students access their digital green cards? (Mobile app, web portal, downloadable PDF) 
-15. What user roles and permissions should exist in the system? (Finance staff, registrar, IT admin, students) 
-SECTION D: IMPLEMENTATION CONSIDERATIONS 
-16. What concerns do you have about transitioning from the manual to an automated system? 
-Probe: Staff training? System reliability? Cost? Student acceptance? 
-17. What infrastructure (hardware, software, network) would be needed to support this system? 
-18. What training would staff require to operate the new system effectively? 
-19. How should the system handle situations when internet connectivity is unavailable? 
-Probe: Offline mode? Fallback procedures? 
-20. What ongoing technical support and maintenance would be required? 
-SECTION E: EXPECTED BENEFITS AND CHALLENGES 
-21. What benefits do you expect from implementing an automated tuition verification system? 
-Probe: Time savings? Error reduction? Student satisfaction? Staff workload? 
-22. How do you think students will respond to digital green cards versus physical cards? 
-23. What potential challenges or risks do you foresee in implementing this system? 
-24. How can these challenges be mitigated? 
-SECTION F: ADDITIONAL INSIGHTS 
-25. Have you seen similar systems implemented at other institutions? If yes, what lessons can KIU learn? 
-26. What recommendations would you give to ensure successful implementation of this system at KIU? 
-27. Is there anything else you would like to add regarding the proposed automated tuition verification and green card system? 
-THANK YOU FOR YOUR TIME AND VALUABLE INSIGHTS! 
-Interviewer's Notes: 
-Date of Interview: .................................................. 
-Time: .................................................. 
-Location: .................................................. 
-Respondent Code: .................................................. 
-Duration: .................................................. 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-i 
- 
-
-i 
- 
-
-
-
-i 
- 
-
-
-
-
-
-1 
- 
-
-1 
- 
-
-
-
-1 
- 
-
- 
-? 
-
- 
-? 
-
-1 
- 
-
-1 
- 
-
- 
-? 
-
-1 
- 
-
-
-
-
-
-1 
- 
-
-1 
- 
-
-
-
-1 
- 
-

@@ -1,6 +1,0 @@
-Bank Payment Receipt
-Bank: Example Bank
-Account: 123-456-789
-Deposit: UGX 250,000.00
-Reference: TXN/2023/00123
-Date: 2023-03-15

@@ -4,3 +4,8 @@ __pycache__/
 vendor/
 node_modules/
 *.log
+.tmp_chrome_profile*
+.tmp_edge_profile*
+*.dmp
+*.pma
+tmp_*
