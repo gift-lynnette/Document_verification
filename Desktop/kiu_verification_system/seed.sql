@@ -72,32 +72,32 @@ ALTER TABLE email_verification_tokens AUTO_INCREMENT = 1;
 
 INSERT INTO users (user_id, admission_number, email, password_hash, role, mfa_enabled, email_verified_at, last_login_at, is_active) VALUES
 -- Admin
-(1, 'ADMIN001', 'admin@kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', TRUE, NOW(), NOW(), TRUE),
+(1, 'ADMIN001', 'admin@kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'admin', TRUE, NOW(), NOW(), TRUE),
 
 -- Finance Officers
-(2, 'FIN001', 'finance.manager@kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'finance_officer', TRUE, NOW(), NOW(), TRUE),
-(3, 'FIN002', 'finance.officer@kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'finance_officer', FALSE, NOW(), NOW(), TRUE),
+(2, 'FIN001', 'finance.manager@kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'finance_officer', TRUE, NOW(), NOW(), TRUE),
+(3, 'FIN002', 'finance.officer@kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'finance_officer', FALSE, NOW(), NOW(), TRUE),
 
 -- Registrar
-(4, 'REG001', 'registrar@kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'registrar', TRUE, NOW(), NOW(), TRUE),
+(4, 'REG001', 'registrar@kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'registrar', TRUE, NOW(), NOW(), TRUE),
 
 -- Students (16 students with varied profiles)
-(5, 'KIU/2024/001', 'john.doe@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(6, 'KIU/2024/002', 'jane.smith@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(7, 'KIU/2024/003', 'david.williams@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(8, 'KIU/2024/004', 'sarah.johnson@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', TRUE, NOW(), NOW(), TRUE),
-(9, 'KIU/2024/005', 'michael.brown@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(10, 'KIU/2024/006', 'emily.davis@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(11, 'KIU/2023/101', 'robert.taylor@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(12, 'KIU/2023/102', 'linda.anderson@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(13, 'KIU/2025/001', 'james.wilson@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), '2025-02-10 09:15:00', TRUE),
-(14, 'KIU/2025/002', 'mary.moore@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), '2025-02-12 14:30:00', TRUE),
-(15, 'KIU/2024/007', 'peter.martin@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(16, 'KIU/2024/008', 'grace.lee@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(17, 'KIU/2025/003', 'thomas.white@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, '2025-02-13 10:00:00', NULL, TRUE),
-(18, 'KIU/2024/009', 'angela.harris@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(19, 'KIU/2024/010', 'daniel.clark@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NOW(), NOW(), TRUE),
-(20, 'KIU/2025/004', 'susan.lewis@student.kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', FALSE, NULL, NULL, TRUE);
+(5, 'KIU/2024/001', 'john.doe@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(6, 'KIU/2024/002', 'jane.smith@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(7, 'KIU/2024/003', 'david.williams@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(8, 'KIU/2024/004', 'sarah.johnson@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', TRUE, NOW(), NOW(), TRUE),
+(9, 'KIU/2024/005', 'michael.brown@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(10, 'KIU/2024/006', 'emily.davis@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(11, 'KIU/2023/101', 'robert.taylor@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(12, 'KIU/2023/102', 'linda.anderson@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(13, 'KIU/2025/001', 'james.wilson@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), '2025-02-10 09:15:00', TRUE),
+(14, 'KIU/2025/002', 'mary.moore@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), '2025-02-12 14:30:00', TRUE),
+(15, 'KIU/2024/007', 'peter.martin@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(16, 'KIU/2024/008', 'grace.lee@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(17, 'KIU/2025/003', 'thomas.white@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, '2025-02-13 10:00:00', NULL, TRUE),
+(18, 'KIU/2024/009', 'angela.harris@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(19, 'KIU/2024/010', 'daniel.clark@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NOW(), NOW(), TRUE),
+(20, 'KIU/2025/004', 'susan.lewis@student.kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'student', FALSE, NULL, NULL, TRUE);
 
 -- ============================================================================
 -- TABLE 2: STUDENT_PROFILES
@@ -321,8 +321,8 @@ INSERT INTO system_settings (setting_key, setting_value, setting_type, setting_c
 ('smtp_host', 'smtp.kiu.ac.ug', 'string', 'email', 'SMTP server hostname', TRUE, FALSE),
 ('smtp_port', '587', 'integer', 'email', 'SMTP server port', TRUE, FALSE),
 ('smtp_username', 'noreply@kiu.ac.ug', 'email', 'email', 'SMTP authentication username', TRUE, FALSE),
-('smtp_password', 'encrypted_password_here', 'string', 'email', 'SMTP authentication password', TRUE, TRUE),
-('sms_api_key', 'encrypted_api_key_here', 'string', 'sms', 'SMS provider API key', TRUE, TRUE),
+('smtp_password', '', 'string', 'email', 'SMTP authentication password', TRUE, TRUE),
+('sms_api_key', '', 'string', 'sms', 'SMS provider API key', TRUE, TRUE),
 ('sms_sender_id', 'KIU-UG', 'string', 'sms', 'SMS sender identifier', TRUE, FALSE),
 ('min_password_length', '8', 'integer', 'security', 'Minimum password length requirement', TRUE, FALSE),
 ('session_timeout_minutes', '60', 'integer', 'security', 'Session timeout in minutes', TRUE, FALSE),

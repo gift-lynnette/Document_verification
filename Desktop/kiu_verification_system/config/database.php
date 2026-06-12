@@ -5,11 +5,18 @@
  */
 
 class Database {
-    private $host = "localhost";
-    private $db_name = "Greencard_system";
-    private $username = "root";
-    private $password = "";
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
     private $conn;
+
+    public function __construct() {
+        $this->host = function_exists('kiu_env') ? kiu_env('DB_HOST', 'localhost') : (getenv('DB_HOST') ?: 'localhost');
+        $this->db_name = function_exists('kiu_env') ? kiu_env('DB_NAME', 'Greencard_system') : (getenv('DB_NAME') ?: 'Greencard_system');
+        $this->username = function_exists('kiu_env') ? kiu_env('DB_USER', 'root') : (getenv('DB_USER') ?: 'root');
+        $this->password = function_exists('kiu_env') ? kiu_env('DB_PASS', '') : (getenv('DB_PASS') ?: '');
+    }
 
     /**
      * Get database connection

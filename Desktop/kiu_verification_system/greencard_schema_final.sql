@@ -705,7 +705,7 @@ INSERT INTO system_settings (setting_key, setting_value, setting_type, setting_c
 ('maintenance_mode', 'false', 'boolean', 'general', 'System maintenance mode flag', TRUE);
 
 INSERT INTO users (admission_number, email, password_hash, role, email_verified_at, is_active) VALUES
-('ADMIN001', 'admin@kiu.ac.ug', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', NOW(), TRUE);
+('ADMIN001', 'admin@kiu.ac.ug', '$2y$10$nj9doOsf9RUz904pkpQDjupoFvOUNRwR9euACD7OUqoC6F.kUFxFu', 'admin', NOW(), TRUE);
 
 -- ============================================================================
 -- ALL ERRORS FIXED

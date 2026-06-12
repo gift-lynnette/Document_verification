@@ -4,6 +4,87 @@
  * KIU Automated Tuition Verification & Green Card System
  */
 
+if (!function_exists('kiu_load_environment_file')) {
+	function kiu_load_environment_file(string $rootDir): void
+	{
+		if (class_exists('Dotenv\\Dotenv')) {
+			$dotenv = Dotenv\Dotenv::createImmutable($rootDir);
+			$dotenv->safeLoad();
+			return;
+		}
+
+		$envFile = rtrim($rootDir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . '.env';
+		if (!is_file($envFile) || !is_readable($envFile)) {
+			return;
+		}
+
+		$lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		foreach ($lines ?: [] as $line) {
+			$line = trim($line);
+			if ($line === '' || strpos($line, '#') === 0 || strpos($line, '=') === false) {
+				continue;
+			}
+
+			[$name, $value] = explode('=', $line, 2);
+			$name = trim($name);
+			$value = trim($value);
+			if ($name === '') {
+				continue;
+			}
+
+			if (
+				(strlen($value) >= 2) &&
+				(($value[0] === '"' && substr($value, -1) === '"') || ($value[0] === "'" && substr($value, -1) === "'"))
+			) {
+				$value = substr($value, 1, -1);
+			}
+
+			if (getenv($name) === false) {
+				putenv($name . '=' . $value);
+				$_ENV[$name] = $value;
+				$_SERVER[$name] = $value;
+			}
+		}
+	}
+}
+
+if (!function_exists('kiu_env')) {
+	function kiu_env(string $name, $default = null)
+	{
+		$value = $_ENV[$name] ?? $_SERVER[$name] ?? getenv($name);
+		if ($value === false || $value === null || $value === '') {
+			return $default;
+		}
+		return $value;
+	}
+}
+
+if (!function_exists('kiu_env_bool')) {
+	function kiu_env_bool(string $name, bool $default = false): bool
+	{
+		$value = kiu_env($name, null);
+		if ($value === null) {
+			return $default;
+		}
+
+		$filtered = filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+		return $filtered ?? $default;
+	}
+}
+
+if (!function_exists('kiu_env_int')) {
+	function kiu_env_int(string $name, int $default): int
+	{
+		$value = kiu_env($name, null);
+		if ($value === null || !is_numeric($value)) {
+			return $default;
+		}
+		return (int)$value;
+	}
+}
+
+kiu_load_environment_file(dirname(__DIR__));
+
 if (!function_exists('kiu_detect_public_base_url')) {
 	function kiu_detect_public_base_url(string $defaultBaseUrl): string
 	{
@@ -48,7 +129,7 @@ if (!function_exists('kiu_detect_public_base_url')) {
 // Application Settings
 define('APP_NAME', 'KIU Automated Verification System');
 define('APP_VERSION', '1.0.0');
-define('BASE_URL', 'http://localhost/research/');
+define('BASE_URL', rtrim((string)kiu_env('BASE_URL', 'http://localhost/research/'), '/') . '/');
 define('PUBLIC_BASE_URL', kiu_detect_public_base_url(BASE_URL));
 define('SITE_ROOT', dirname(__DIR__));
 
@@ -85,27 +166,27 @@ define('SESSION_NAME', 'KIU_SESSION');
 define('PASSWORD_MIN_LENGTH', 8);
 define('MAX_LOGIN_ATTEMPTS', 5);
 define('LOCKOUT_DURATION', 900); // 15 minutes
-define('JWT_SECRET', 'your-secret-key-change-in-production');
+define('JWT_SECRET', (string)kiu_env('JWT_SECRET', 'change-this-jwt-secret-before-production'));
 define('JWT_EXPIRY', 3600); // 1 hour
-define('ENCRYPTION_KEY', 'your-encryption-key-change-in-production');
-define('PYTHON_BINARY', getenv('KIU_PYTHON_BINARY') ?: 'python');
+define('ENCRYPTION_KEY', (string)kiu_env('ENCRYPTION_KEY', 'change-this-encryption-key-before-production'));
+define('PYTHON_BINARY', (string)kiu_env('KIU_PYTHON_BINARY', 'python'));
 define('DOCUMENT_VERIFIER_SCRIPT', SITE_ROOT . '/python/verify.py');
 define('DOCUMENT_VERIFIER_APPROVE_THRESHOLD', 75);
 define('DOCUMENT_VERIFIER_REVIEW_THRESHOLD', 50);
 
 // Email Settings
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'your-email@gmail.com');
-define('SMTP_PASSWORD', 'your-password');
-define('SMTP_FROM_EMAIL', 'noreply@kiu.ac.ug');
-define('SMTP_FROM_NAME', 'KIU Verification System');
+define('SMTP_HOST', (string)kiu_env('SMTP_HOST', 'smtp.gmail.com'));
+define('SMTP_PORT', kiu_env_int('SMTP_PORT', 587));
+define('SMTP_USERNAME', (string)kiu_env('SMTP_USERNAME', ''));
+define('SMTP_PASSWORD', (string)kiu_env('SMTP_PASSWORD', ''));
+define('SMTP_FROM_EMAIL', (string)kiu_env('SMTP_FROM_EMAIL', 'noreply@kiu.ac.ug'));
+define('SMTP_FROM_NAME', (string)kiu_env('SMTP_FROM_NAME', 'KIU Verification System'));
 
 // SMS Settings
-define('SMS_GATEWAY', 'africas_talking'); // africas_talking or twilio
-define('SMS_API_KEY', 'your-api-key');
-define('SMS_API_SECRET', 'your-api-secret');
-define('SMS_SENDER_ID', 'KIU');
+define('SMS_GATEWAY', (string)kiu_env('SMS_GATEWAY', 'africas_talking')); // africas_talking or twilio
+define('SMS_API_KEY', (string)kiu_env('SMS_API_KEY', ''));
+define('SMS_API_SECRET', (string)kiu_env('SMS_API_SECRET', ''));
+define('SMS_SENDER_ID', (string)kiu_env('SMS_SENDER_ID', 'KIU'));
 
 // Payment Settings
 define('MINIMUM_PAYMENT_PERCENTAGE', 50); // 50% of total fees
@@ -180,5 +261,5 @@ define('API_BASE_URL', BASE_URL . 'api/' . API_VERSION . '/');
 define('LOG_DIR', SITE_ROOT . '/logs/');
 define('ERROR_LOG', LOG_DIR . 'error.log');
 define('AUDIT_LOG', LOG_DIR . 'audit.log');
-define('DEBUG_MODE', true); // Set to false in production
-define('FAST_SUBMISSION_MODE', false); // Skip heavy OCR/reference checks during student submission
+define('DEBUG_MODE', kiu_env_bool('DEBUG_MODE', false)); // Set to false in production
+define('FAST_SUBMISSION_MODE', kiu_env_bool('FAST_SUBMISSION_MODE', false)); // Skip heavy OCR/reference checks during student submission

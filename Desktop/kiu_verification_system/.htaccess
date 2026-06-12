@@ -11,7 +11,7 @@
     Options -Indexes
     
     # Protect sensitive files
-    <FilesMatch "\.(sql|log|md)$">
+    <FilesMatch "(^\.env|\.env\.|\.sql$|\.log$|\.md$)">
         Order allow,deny
         Deny from all
     </FilesMatch>

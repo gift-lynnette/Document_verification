@@ -4,12 +4,13 @@
  * This file should be included at the start of every PHP file
  */
 
-// Include configuration files FIRST
+// Include Composer autoloader for dependencies before constants so optional
+// dotenv support can be used during configuration loading.
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+// Include configuration files
 require_once __DIR__ . '/constants.php';
 require_once __DIR__ . '/database.php';
-
-// Include Composer autoloader for dependencies
-require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
