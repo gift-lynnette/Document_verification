@@ -1,0 +1,116 @@
+                        FORMAT OF MAIN BODY OF REPORT
+           Each major Chapter e.g. INTRODUCTION should start on a separate page.
+         Note: Numbering of the main body of the Report to follow as stated below where
+                                         Applicable
+1.0 CHAPTER ONE: GENERAL INTRODUCTION
+
+                                         TABLE OF CONTENTS
+Preliminary Pages
+
+CHAPTER ONE: INTRODUCTION
+1.1 Background of the Study
+Describes the prevailing situation at the global, national and local levels (broad perspective to narrow
+perspectives). Explains what the study is all of the about. Should arouse the interest of the readers.
+
+
+1.2 Statement of the Problem
+    The researcher has to identify the specific problem existing within the specific area of interest which
+    his research will seek to address. The statement should provide the researcher with considerable
+    direction in pursuing the study.
+
+
+1.3 Objectives
+           1.3.1 General Objective
+        This refers to the general aim for wanting to carry out the study. The purpose should not be a
+reproduction of the title, but should be a summary statement of the reason why the study is being
+proposed.E.g To develop a mobile application system for patients health record management for…….
+
+
+          1.3.2 Specific Objectives
+        These are finer statements of what is to be accomplished, which emanate from the purpose of the
+study. They specify more directly what the researcher is going to do. While the purpose is a general
+statement of the aim of the study, the objectives must be specific. Should state properly and clearly the
+general and specific objectives that should jive with the research questions. Ideally, the research objectives
+should be measurable, attainable and feasible.e.g To Investigate , To develop, To implement , To test, or
+To validate
+          1.3.3 Research Questions
+        The research questions must be stated in question form and in a way that they are synchronized
+with the research objectives.
+1.3 Scope of the study
+2   geographical scope defines the location or site of the study.; the content/system scope defines the
+    factors and variables to be considered.
+
+
+1.5 Significance of the Study
+                 This provides the justification of the study. It spells out who the probable beneficiaries of
+the study findings might be (country, government, local community, agency, curriculum developers,
+researchers etc.), and how they might benefit. It also shows how the research findings will contribute to
+general knowledge and what its impact on development towards better life is. It should reflect on knowledge
+creation, as well as on technological or socio-economic value to the community.
+
+2.0 LITERATURE REVIEW
+    i. The Literature Review should start with an introduction which specifies the subtitles of content
+       covered.
+   ii. In this section of Literature Review, student should demonstrate evidence of understanding of
+       current research on the subject under investigation and show clear gaps in knowledge that will be
+       discussed.
+ iii.  Appropriate themes for this chapter can be developed using the specific objectives of the study.
+       Thus, relevant themes to the study and those derived from related literature including the theoretical
+       framework guiding the study should be discussed here.
+  iv.  The literature review should be consistent with the requirements of the title (internal consistency)
+       and aspects of the introduction e.g. background to the study.
+   v.  The literature review should be properly cited, paraphrased and critiqued.
+  vi.  The Literature review should have a summary of identified gaps in the reviewed literature.
+ vii.  Unless for archival studies, 80% of the references used should be less than 10 years old.
+viii.  Endeavour to use current refereed journals and periodicals as much as possible.
+  ix.  Review related literature which are inline with your topic
+   x.  Identify the gaps in the related topics which you would like to address.
+
+Sections should include:
+            a. 2.1 Introduction
+            b. 2.2 Related Studies (in line with your topic and specific objectives)
+            c. 2.3 Gaps identified
+
+3.0 CHAPTER (THREE): METHODOLOGY
+The Methodology section should start with an introduction which specifies the subtitles of content covered.
+This Chapter highlights methodological details appropriate to the study. They include:
+3.1 Research Approach (State and justify the chosen design).
+3.2 Target Population (Describe the target population and give figures and a source).
+3.3 Sampling Techniques (Explain the Sampling techniques used for the study)
+3.4 Sample Size (explain the sample size-(unit of analysis) and explain how it
+3.5 System Development Methodologies
+3.5.1 Data Collection Methods
+3.5.2 System Design and Interface Techniques
+3.5.3 Testing
+3.5.4 Tools for Implementation
+3.6 Logistical and Ethical Considerations (If any)
+
+CHAPTER FOUR:           SYSTEM ANALYSIS AND DESIGN
+
+CHAPTER FIVE: SYSTEM IMPLEMENTATION, TESTING AND EVALUATION
+
+CHAPTER SIX: CONCLUSION AND RECOMMENDATION
+
+
+7. 0 REFERENCES
+References should be single-spaced and listed alphabetically in the reference list. For citations within the
+text, the format of author and year of publication is recommended. Use the latest American Psychology
+Association (APA) style of referencing for IT students and IEEE for Computer Science Students.
+APA
+ Sayre, Rebecca K., Devercelli, A.E., Neuman, M.J., &Wodon, Q. (2015). Investment in early childhood
+     development: Review of the World Bank’s recent experience. doi: 10.1596/978-1-4648-0403-8
+ Fernández-Manzanal, R., Rodríguez-Barreiro, L., &Carrasquer, J. (2007). Evaluation of environmental
+     attitudes: Analysis and results of a scale applied to university students. Science Education, 91(6), 988–
+     1009. doi:10.1002/sce.20218
+
+IEEE
+[1] M. Abramowitz and I. A. Stegun, Eds., Handbook of Mathematical Functions (Applied Mathematics
+Series 55). Washington, DC: NBS, 1964, pp. 32-33.
+[2] M. Gorkii, “Optimal design,” Dokl. Akad. Nauk SSSR, vol. 12, pp. 111-122, 1961 (Transl.: in L.
+Pontryagin, Ed., The Mathematical Theory of Optimal Processes. New York: Interscience, 1962, ch. 2, sec.
+3, pp. 127-135).
+
+7.0 APPENDICES
+They will include The budget and work plan. These must be numbered sequentially e.g. I.II,etc. or A, B,
+etc
+

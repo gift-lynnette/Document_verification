@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - KIU Automated Verification System</title>
+    <link rel="icon" type="image/png" href="http://localhost/research/logs/kiu.png">
+    <link rel="stylesheet" href="http://localhost/research/assets/css/style.css?v=1774041458">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="role-student module-student">
+                    <nav class="navbar navbar-student">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="http://localhost/research/">
+                        <img src="http://localhost/research/logs/kiu.png" alt="Kampala International University" class="brand-logo">
+                    </a>
+                </div>
+                
+                <ul class="navbar-menu">
+                                            <li><a href="http://localhost/research/modules/student/dashboard.php">Dashboard</a></li>
+                        <li><a href="http://localhost/research/modules/student/submit_documents.php">Submit Documents</a></li>
+                                    </ul>
+                
+                <div class="navbar-user">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button">
+                            <i class="fas fa-user-circle"></i>
+                            KIU/2024/001                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                                                        <a href="http://localhost/research/modules/student/profile.php">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                                                                                    <div class="dropdown-divider"></div>
+                            <a href="http://localhost/research/modules/student/dashboard.php">
+                                <i class="fas fa-home"></i> Student Dashboard
+                            </a>
+                            <a href="http://localhost/research/modules/student/submit_documents.php">
+                                <i class="fas fa-file-upload"></i> Submit Documents
+                            </a>
+                                                        <a href="http://localhost/research/change_password.php">
+                                <i class="fas fa-lock"></i> Change Password
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="http://localhost/research/logout.php">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+    <main class="main-content">
+        
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Welcome, John Muwanguzi Doe</h1>
+        <p>Track your admissions and finance clearance workflow</p>
+    </div>
+
+        
+    <div class="dashboard-grid">
+        <!-- Status Card -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Application Status</h3>
+            </div>
+            <div class="card-body">
+                                    <div class="status-empty">
+                        <p>No submission yet</p>
+                        <a href="submit_documents.php" class="btn btn-primary">Submit Documents</a>
+                    </div>
+                            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Quick Actions</h3>
+            </div>
+            <div class="card-body">
+                <div class="quick-actions">
+                    <a href="submit_documents.php" class="action-btn">
+                        <span class="action-icon">??</span>
+                        <span>Submit Documents</span>
+                    </a>
+                    <a href="submit_documents.php" class="action-btn">
+                        <span class="action-icon">??</span>
+                        <span>Update Submission</span>
+                    </a>
+                                        <a href="notifications.php?filter=approvals" class="action-btn">
+                        <span class="action-icon">??</span>
+                        <span>Notifications</span>
+                                                    <span class="badge">1</span>
+                                            </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Notifications -->
+        <div class="card">
+        <div class="card-header">
+            <h3>Recent Notifications</h3>
+            <a href="notifications.php?filter=approvals">View All</a>
+        </div>
+            <div class="card-body">
+                                    <ul class="notification-list">
+                                                    <li class="notification-item ">
+                                <strong>Green Card Available</strong>
+                                <p>Your KIU Green Card is now ready for download!</p>
+                                <small>14/02/2026</small>
+                            </li>
+                                            </ul>
+                            </div>
+        </div>
+        
+        <!-- Account Information -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Account Information</h3>
+            </div>
+            <div class="card-body">
+                <table class="info-table">
+                    <tr>
+                        <th>Admission Number:</th>
+                        <td>KIU/2024/001</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>john.doe@student.kiu.ac.ug</td>
+                    </tr>
+                                        <tr>
+                        <th>Program:</th>
+                        <td>Bachelor of Science in Computer Science</td>
+                    </tr>
+                    <tr>
+                        <th>Faculty:</th>
+                        <td>Faculty of Science and Technology</td>
+                    </tr>
+                                        <tr>
+                        <th>Last Login:</th>
+                        <td>09/04/2026 13:45:26</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 KIU Automated Verification System. All rights reserved.</p>
+            <p>Version 1.0.0</p>
+        </div>
+    </footer>
+    
+    <script src="http://localhost/research/assets/js/main.js"></script>
+</body>
+</html>
+
