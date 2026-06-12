@@ -1,2 +1,11 @@
 AppData/
 *.zip
+.claude.json
+.claude.json.backup
+.bash_history
+.vscode/
+.cursor/
+AppData/
+*.pdf
+*.zip
+Documents/
